@@ -38,6 +38,23 @@ class TwitterSearchClient:
             tweets.extend(more_tweets[:max(0, num_tweets - count)])
             count += 20
 
+        def gather_conversation_threads(tweets):
+            """Gathers full conversation threads based on in_reply_to status of tweets."""
+            full_conversations = []
+            for tweet in tweets:
+                conversation = [tweet]
+                while tweet.in_reply_to is not None:
+                    parent_tweet = self.get_tweet_by_id(tweet.in_reply_to)
+                    if parent_tweet is not None:
+                        conversation.insert(0, parent_tweet)
+                        tweet = parent_tweet
+                    else:
+                        break
+                full_conversations.extend(conversation)
+            return full_conversations
+
+        tweets = gather_conversation_threads(tweets)
+
         return tweets
     
     def get_tweet_by_id(self, tweet_id):

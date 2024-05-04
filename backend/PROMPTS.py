@@ -96,3 +96,39 @@ Given the following context:
 Output:
 
 """
+
+SUMMARIZE = """
+Given a list of text data related to the following event, generate a summary of the event in a bullet point format.
+
+For example, given the following event:
+
+Event description: ⚡️Over the past 24 hours, Ukrainian armed forces have shelled residential areas of the DPR
+
+Context:
+Three civilians wounded in DPR during day as result of Ukraine’s shelling attacks https://t.co/RmP7v3SwIc
+Blitzing news 🚨: Three civilians wounded in DPR during day as result of Ukraine’s shelling attacks - BreakingNews https://t.co/4Ah9h0DFet
+Ukrainian troops fired 13 155-mm shells at Gorlovka and Donetsk, the DPR office at the Joint Center for Control and Coordination of Issues Related to War Crimes of Ukraine (JCCC) reported. “Shelling was recorded from the AFU in the direction: 08.45 - the settlement
+@nour_odeh FYI, the only Palestine equivalent occupation in Ukraine is the attempted ethnic cleansing of S & E Ukraine's ethnic Russian/Russian speaking population by Kiev's racist fascist regime.It's the DPR & LPR regions being brutalised, & Russia came to to stop their genocide by Kiev
+Three civilians wounded in DPR during day as result of Ukraine’s shelling attacks https://t.co/RmP7v3SwIc
+Blitzing news 🚨: Three civilians wounded in DPR during day as result of Ukraine’s shelling attacks - BreakingNews https://t.co/4Ah9h0DFet
+Another ukranian shelling of civilians in Donetsk region. In village, a house completly destroyed, woman is dead https://t.co/JKRyb7UFV9
+Ukrainian troops fired 13 155-mm shells at Gorlovka and Donetsk, the DPR office at the Joint Center for Control and Coordination of Issues Related to War Crimes of Ukraine (JCCC) reported. “Shelling was recorded from the AFU in the direction: 08.45 - the settlement
+The investigator is investigating the injury of a civilian in the west of Donetsk due to shelling by the Ukrainian Armed Forceshttps://t.co/23gvdxm194
+
+Generate the following output:
+
+Ukraine forces shell residential areas of DPR
+- 3 civilians wounded in DPR
+- 13 155-mm shells launched at Gorlovka and Donetsk
+- Investigators are investigating civilian injuries
+
+Given the following event:
+
+{context}
+
+Context:
+
+{data}
+
+Generate the output:
+"""
