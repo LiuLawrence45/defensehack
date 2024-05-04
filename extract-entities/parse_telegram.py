@@ -25,14 +25,16 @@ def parse_csv(file_path: str) -> List[Node]:
 
 # Extract information from the given row
 def extract_information(row: dict) -> Node:
-    node = Node(
-        id=row.get("id"),
-        sender=row.get("sender"),
-        message=row.get("message"),
-        date=row.get("date"),
-        translation=row.get("translation")
-    )
-    return node
+    # description = Parser.extract_entities(row["translation"])
+
+    # node = Node(
+    #     id=row.get("id"),
+    #     sender=row.get("sender"),
+    #     message=row.get("message"),
+    #     date=row.get("date"),
+    #     translation=row.get("translation")
+    # )
+    # return node
     print(row["translation"])
 
     # return Node(row)
@@ -40,4 +42,5 @@ def extract_information(row: dict) -> Node:
 
 
 if __name__ == "__main__":
-    parse_csv("telegram-eda/top_20_rows.csv")
+    path = "datasets/top_10_telegram.csv"
+    parse_csv(path)
