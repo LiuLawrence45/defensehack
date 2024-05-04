@@ -13,9 +13,14 @@ class TwitterSearchClient:
         self.login()
 
     def login(self):
-        if not all([self.username, self.email, self.password]):
-            raise ValueError("Missing environment variables for Twitter credentials")
-        self.client.login(auth_info_1=self.username, auth_info_2=self.email, password=self.password)
+        cookies_path = 'cookies.json'
+        try:
+            self.client.load_cookies(cookies_path)
+        except FileNotFoundError:
+            if not all([self.username, self.email, self.password]):
+                raise ValueError("Missing environment variables for Twitter credentials")
+            self.client.login(auth_info_1=self.username, auth_info_2=self.email, password=self.password)
+            self.client.save_cookies(cookies_path)
 
     def search(self, start_datetime, end_datetime, query, num_tweets=20):
         if not isinstance(start_datetime, datetime) or not isinstance(end_datetime, datetime):
@@ -27,12 +32,18 @@ class TwitterSearchClient:
         tweets = []
         result = self.client.search_tweet(search_query, 'Latest', count=min(num_tweets, 20))
         tweets.extend(result)
-        
-        while len(tweets) < num_tweets:
-            more_tweets = tweets.next()  # Retrieve more tweets
-            for tweet in more_tweets:
-                tweets.append(tweet)
-                if len(tweets) >= num_tweets:
-                    break
+        count = 0
+        while count < num_tweets:
+            more_tweets = result.next()  # Retrieve more tweets
+            tweets.extend(more_tweets[:max(0, num_tweets - count)])
+            count += 20
 
-        return tweets[:num_tweets]
+        return tweets
+    
+    def get_tweet_by_id(self, tweet_id):
+        try:
+            tweet = self.client.get_tweet_by_id(tweet_id)
+            return tweet
+        except Exception as e:
+            print(f"An error occurred while fetching the tweet: {e}")
+            return None
