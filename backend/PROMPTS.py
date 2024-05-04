@@ -1,5 +1,7 @@
 TWITTER_PROMPT = """
-Given the a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context and are specific enough.
+Given the a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context and are specific enough (ie, choose specific unique keywords, entities, or locations). Please make sure your queries are very targeted and will return relevant results. For example, if a location is abbreviated DPR, you should search for some sort of clarifying term (ie, Ukraine DPR) instead of just JPG because JPG is too ambigious. Or, if the example is relevant to russian, you should search ("russia" + something else) instead of just russia since russia is too broad.
+
+Use the context and the description to disambiguate locations when possible. For example, in the context of ukraine, DPR refers to Donetsk People's republic (though you may want to just query Donetsk)
 
 For example:
 
@@ -18,7 +20,15 @@ This time, death from heaven overtook the 40V6M radar tower, the S-300 launcher 
 
 Generate the following keywords:
 
-["s300","40V6M","Kharkov","Belgorod", "russian attack"]
+keywords: ["s300","40V6M","Kharkov","Belgorod"]
+
+Given the following context:
+
+Event description: ⚡️Over the past 24 hours, Ukrainian armed forces have shelled residential areas of the DPR
+
+Generate the following keywords:
+
+keywords: ["DPR ukraine","ukraine shelling", "Donetsk shelling"]
 
 Given this context:
 
@@ -28,7 +38,7 @@ Generate the following keywords:
 """
 
 TWITTER_ANALYSIS = """
-Given a tweet, determine if the tweet is directly relevant for the event and context below. Return only True or False
+Given a tweet, determine if the tweet is directly relevant for the event and context below. Return only true or false
 
 For example:
 
@@ -52,7 +62,7 @@ This time, death from heaven overtook the 40V6M radar tower, the S-300 launcher 
 
 Output:
 
-True
+relevant: true
 
 Given the following tweet:
 
@@ -73,7 +83,7 @@ This time, death from heaven overtook the 40V6M radar tower, the S-300 launcher 
 
 Output:
 
-False
+relevant: false
 
 Given the following tweet:
 
@@ -82,5 +92,7 @@ Given the following tweet:
 Given the following context:
 
 {context}
+
+Output:
 
 """
