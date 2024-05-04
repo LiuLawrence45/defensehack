@@ -11,6 +11,7 @@ from tqdm import tqdm
 from typing import List
 from node import Node
 import csv
+from parser import Parser
 
 
 # Parse the given CSV for telegram
@@ -25,7 +26,7 @@ def parse_csv(file_path: str) -> List[Node]:
 
 # Extract information from the given row
 def extract_information(row: dict) -> Node:
-    # description = Parser.extract_entities(row["translation"])
+    dict = Parser.extract_events(row["translation"])
 
     # node = Node(
     #     id=row.get("id"),
