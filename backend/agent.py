@@ -49,7 +49,6 @@ class Agent:
                 class TweetAnalysisResult(BaseModel):
                     relevant: bool = Field(..., description="Determines if the tweet is relevant to the context.")
                 result = self.llm.predict_structured(analysis_prompt, schema=TweetAnalysisResult)
-                print(f"Tweet: {tweet.text} is {'relevant' if result.relevant else 'not relevant'}")
                 return tweet if result.relevant else None
             except Exception as e:
                 print(f"An error occurred while analyzing tweet: {tweet.text}. Error: {e}")
@@ -70,3 +69,15 @@ class Agent:
             relevant_tweets[keyword] = self.analyze_tweets(tweets_list, context)
         print("Search completed.")
         return relevant_tweets
+    
+    def summarize(self, context, tweets: List):
+        # Join all tweet texts into a single string separated by newlines
+        context_joined = "\n".join(context)
+        tweet_texts = "\n".join([tweet.text.replace('\n', ' ') for tweet in tweets])
+        media = []
+        for tweet in tweets:
+            if hasattr(tweet, 'media') and tweet.media:
+                media.extend(tweet.media)
+        summary_prompt = SUMMARIZE.format(context=context_joined, data=tweet_texts)
+        summary_result = self.llm.predict(summary_prompt)
+        return (summary_result, media)
