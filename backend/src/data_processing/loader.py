@@ -19,8 +19,10 @@ json_data = data.to_dict(orient='records')
 
 # Connect to MongoDB (adjust the connection string as necessary)
 client = MongoClient(os.getenv("MONGO_URL"), tlsCAFile=certifi.where(), connectTimeoutMS=50000, socketTimeoutMS=50000)
-db = client['telegram']  # Specify the database name
-collection = db['data']  # Specify the collection name
+# db = client['telegram']  # Specify the database name
+# collection = db['data']  # Specify the collection name
+db = client['events']
+collection = db['data']
 
 # Insert the JSON data into MongoDB
 collection.insert_many(json_data)

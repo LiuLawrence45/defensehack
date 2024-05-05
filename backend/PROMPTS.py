@@ -165,6 +165,7 @@ Generate the output:
 
 EXTRACT_EVENT = """
 Given a text, extract the location of the event, and the event description, and the word-for-word exact snippets from the given context that are relevant and not redundant. Return the list of strings as a properly formatted list for context.
+There may be noise or irrelevant context provided. Based on the surrounding context, you can ignore certain information
 
 For example, given this text:
 
@@ -230,3 +231,15 @@ Return:
 
 """.replace("date", datetime.now().strftime("%Y-%m-%d"))
 
+
+PROMPT_REASONING = """
+
+Given the following list of events:
+
+{context}
+
+Analyze potential correlations between the different events. Output your response as direct, concise, but insightful bulletpoints.
+
+Output:
+
+"""

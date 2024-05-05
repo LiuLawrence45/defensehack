@@ -89,5 +89,5 @@ def parse_csv(file_path: str) -> None:
     #     json.dump(nodes, json_file)
 
 if __name__ == "__main__":
-    path = "../../deftech/russia_social_media.csv"
+    path = "datasets/telegram.csv"
     parse_csv(path)
