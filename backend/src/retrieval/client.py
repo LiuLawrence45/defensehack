@@ -64,7 +64,8 @@ class MongoDBClient:
 
         # print("Query time: ", query["time"])
 
-        if coordinates:
+        if coordinates is not None:
+            print("Coordinates are provided!!!!!!!!!!!")
             latitude, longitude = coordinates
             # MongoDB uses a 'near' query with GeoJSON format for location data
             # We need to convert the coordinates to GeoJSON format
@@ -76,9 +77,11 @@ class MongoDBClient:
             query['location'] = {
                 "$nearSphere": {
                     "$geometry": geo_json_location,
-                    "$maxDistance": 0
+                    "$maxDistance": 80467
                 }
             }
+        else:
+            print("COORDS ARE NOT PROVIFED")
 
         try:
             results = collection.find(query)
