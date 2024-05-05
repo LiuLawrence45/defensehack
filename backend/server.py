@@ -106,21 +106,16 @@ async def mongo_one(query) -> List:
 
 @app.post("/search")
 async def search(request: SearchRequest):
-    events = await mongo_one(request.query)
 
+    events = await mongo_one(request.query)
     telegram_posts = []
     for event in events:
+        event['posts'] = []
         for id in event["ids"]:
             post = mongo.search_telegram_id(id)
             if post is not None:
                 telegram_posts.append(post)
-
-    print("Telegram Posts:")
-    for post in telegram_posts:
-        print("#" * 50)
-        print(post)
-    print("#" * 50)
-
+                event['posts'].append(post)
 
 
     # # Twitter parsing
