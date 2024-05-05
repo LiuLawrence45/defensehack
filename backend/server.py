@@ -8,6 +8,11 @@ from src.retrieval.client import MongoDBClient
 import motor.motor_asyncio
 import os
 import certifi
+from langchain.prompts import ChatPromptTemplate
+from langchain.schema.output_parser import StrOutputParser
+from langchain_openai import ChatOpenAI
+import json
+from datetime import datetime
  
 app = FastAPI()
 # mongoClient = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
@@ -30,14 +35,13 @@ async def search(request: SearchRequest):
     location = gmaps.geocode(query_dict["location"])
     
     try: 
-        loc = (None, None)
-        loc[0] = location[0]['geometry']['location']['lat']
-        loc[1] = location[0]['geometry']['location']['lng']
+        loc = (location[0]['geometry']['location']['lat'], location[0]['geometry']['location']['lng'])
+        print("Location is: ", location)
     except Exception as e:
+        print("Reached error: ", e)
         loc = None
 
     results = mongo.search_events(start_time = query_to_run.start_date, end_time = query_to_run.end_date, coordinates = loc) # gets us a list of events
-
 
     print("Time: ", results["time"], "\nEvent: ", results["event"])
     print("*"*50)
@@ -68,21 +72,75 @@ async def search(request: SearchRequest):
         raise HTTPException(status_code=404, detail="No results found")
     return final_results
 
+
 if __name__ == "__main__":
-    query_to_run = query("over the past two months dk300 bombing with tanks in south russia")
-    query_dict = query_to_run.__dict__
+    # query_to_run = query("over the past two months dk300 bombing with tanks in south russia")
+
+    QUERY_PROMPT = """
+Given a natural language query, decompose the query into a structured query object with the following fields:
+
+start_date: datetime
+end_date: datetime
+location: str
+topic: str
+
+If not start/end date is passed, return the past year. Today is {date}
+
+For example, given this query:
+
+Find everything happening in Ukraine over the past 2 days
+
+Return:
+{{
+
+"start_date": "2024-02-28T00:00:00.000Z",
+"end_date": "2024-03-01T00:00:00.000Z",
+"location": "Ukraine",
+"topic": "ukraine",
+}}
+
+
+Given this query:
+
+What has happened with SP300 missles in Ukraine?
+
+Return:
+{{
+"start_date": "2023-05-04T00:00:00.000Z",
+"end_date": "2024-05-04T00:00:00.000Z",
+"location": "Ukraine",
+"topic": "sp300 missiles",
+
+}}
+
+
+Given this query:
+
+{context}
+
+Return, in valid JSON output:
+
+"""
+    # query_dict = query_to_run.__dict__
+    chain = ChatPromptTemplate.from_template(QUERY_PROMPT) | ChatOpenAI() | StrOutputParser()
+    result = chain.invoke({"context": "What has happened with SP300 missles in Ukraine?", "date": datetime.now().strftime("%Y-%m-%d")})
+    try:
+        query_dict = json.loads(result)
+        print("Valid JSON:", query_dict)
+    except json.JSONDecodeError:
+        print("Invalid JSON received from chain.invoke")
     location = gmaps.geocode(query_dict["location"])
     
     try: 
         loc = (location[0]['geometry']['location']['lat'], location[0]['geometry']['location']['lng'])
-        print("Location is: ", location)
+        # print("Location is: ", location)
     except Exception as e:
         print("Reached error: ", e)
         loc = None
 
     print("Start time: ", query_dict["start_date"])
     print("End time", query_dict["end_date"])
-    results = mongo.search_events(start_time = query_to_run.start_date, end_time = query_to_run.end_date, coordinates = loc) # gets us a list of events
+    results = mongo.search_events(start_time = datetime.fromisoformat(query_dict["start_date"]), end_time = datetime.fromisoformat(query_dict["end_date"]), coordinates = loc) # gets us a list of events
     for result in results:
         print("Content: ", result["event"])
         print("\nTime: ", result["time"])
