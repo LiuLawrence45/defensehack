@@ -19,7 +19,7 @@ Given content, extract all notable events mentioned. Return in a dictionary form
                                                  
     }}
 
-    Make sure that the location of the event is formatted so it is findable by GeoPy (python). And further, make sure the output is valid json.
+    Make sure that the location of the event is formatted so it is findable by GeoPy (python). The descriptions should be related to and aid any military intelligence efforts. AGAIN, THESE DESCRIPTIONS SHOULD AID ANY MILITARY INTELLIGENCE EFFORTS. And further, make sure the output is valid json.
     Below are some examples: 
 
 ############

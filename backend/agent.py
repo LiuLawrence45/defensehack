@@ -79,5 +79,6 @@ class Agent:
             if hasattr(tweet, 'media') and tweet.media:
                 media.extend(tweet.media)
         summary_prompt = SUMMARIZE.format(context=context_joined, data=tweet_texts)
+        print(summary_prompt)
         summary_result = self.llm.predict(summary_prompt)
         return (summary_result, media)
