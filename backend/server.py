@@ -152,22 +152,16 @@ if __name__ == "__main__":
 
     async def main():
         events = await mongo_one("What has happened with Kyiv in Ukraine?")
-
         telegram_posts = []
         for event in events:
+            event['posts'] = []
             for id in event["ids"]:
                 post = mongo.search_telegram_id(id)
                 if post is not None:
-                    print("ID Found! ", id)
                     telegram_posts.append(post)
-                else:
-                    print("ID not found: ", id)
+                    event['posts'].append(post)
 
-        # print("Telegram Posts:")
-        # for post in telegram_posts:
-        #     print("#" * 50)
-        #     print(post)
-        # print("#" * 50)
+        
     asyncio.run(main())
 
 # if __name__ == "__main__":

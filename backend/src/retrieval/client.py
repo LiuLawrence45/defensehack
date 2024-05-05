@@ -36,10 +36,7 @@ class MongoDBClient:
         try:
             results = collection.find({"id": id.strip()})
             results = list(results)
-            for result in results:
-                print("Result is: ", result["event"])
-            print("#"*30)
-            return results
+            return results[0]
         
         except Exception as e:
             return None
