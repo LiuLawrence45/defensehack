@@ -29,7 +29,6 @@ class Parser():
         events = chain.invoke({
             "content": content
         })
-
         events = json.loads(events)
 
         # for event in events:

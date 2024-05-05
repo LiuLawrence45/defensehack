@@ -20,6 +20,7 @@ import pickle
 def extract_information(row: dict) -> Node:
     result = None
     try:
+
         result = Parser.extract_events(row["translation"])
         result = result[0] if isinstance(result, list) else None
         result["id"] = row["id"]
@@ -64,7 +65,7 @@ def parse_csv(file_path: str) -> None:
         reader = csv.DictReader(file)
         with ThreadPoolExecutor(max_workers=100) as executor:
             # Split rows into chunks for each worker
-            rows = [x for x in reader][:1000]
+            rows = [x for x in reader][:100000]
             n = len(rows) // 100
             row_chunks = [rows[i * n:(i + 1) * n] for i in range(100)]
             row_chunks[-1].extend(rows[16 * n:])  # Include any remaining rows in the last chunk
