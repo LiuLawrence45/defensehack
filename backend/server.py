@@ -27,7 +27,6 @@ async def search(request: SearchRequest):
     final_results = []
     for event in results:
         event["_id"] = str(event["_id"])
-        event = agent.extract_event(data)
         context  = [
             f"Event details: {event['title']}",
             f"Event description: {" ".join(event['context'])}"
@@ -40,7 +39,7 @@ async def search(request: SearchRequest):
         results = agent.run_search(context, start_time, end_time)
         relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
         summary = agent.summarize(context, relevant_tweets_list)
-        summary = (summary[0], [x['media_url_https'] for x in summary[1]])
+        summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['date'], event['location'])
         final_results.append(summary)
 
     if not results:
