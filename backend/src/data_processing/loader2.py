@@ -19,6 +19,7 @@ results = [
         "context": event["context"],
         "time": time,
         "ids": ids,
+        "embedding": event["embed"]
     } for event, time, ids in results
 ]
 
@@ -31,7 +32,7 @@ client = MongoClient(os.getenv("MONGO_URL"), tlsCAFile=certifi.where(), connectT
 db = client['events']
 collection = db['data']
 
-print("Results is: ", results)
+# print("Results is: ", results)
 
 # Insert the JSON data into MongoDB
 collection.insert_many(results)

@@ -19,6 +19,7 @@ class SearchRequest(BaseModel):
 async def search(request: SearchRequest):
     query_to_run = query(request.query)
     query_dict = query_to_run.__dict__
+    
     results = mongo.search_telegram(search_query = query_dict["topic"], start_time = query_dict["start_date"], end_time = query_dict["end_date"])
 
     if not results:
