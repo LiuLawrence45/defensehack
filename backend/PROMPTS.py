@@ -160,3 +160,30 @@ Context:
 
 Generate the output:
 """
+
+EXTRACT_EVENT = """
+Given a text, extract the location of the event, and the event description, and the word-for-word exact snippets from the given context that are relevant and not redundant:
+
+For example, given this text:
+
+🏍In Evpatoria, a motorcyclist flew into a road fence and died. As reported by the State Traffic Safety Inspectorate of the Ministry of Internal Affairs of the Republic of Kazakhstan, on March 27, on the Simferopol-Evpatoria highway, an 18-year-old Suzuki motorcycle driver did not choose a safe speed when rounding the road, which is why he crashed into a road fence. He died from the injuries he received at the scene of the accident.All the circumstances of what happened are now being clarified. Photo: State Traffic Safety Inspectorate of the Ministry of Internal Affairs of the Republic of Kazakhstan@crimea24new
+Similar text at index 1238:
+An 18-year-old motorcyclist died in an accident near Evpatoria. On the night of March 27, the driver of a Suzuki motorcycle, on the Simferopol-Evpatoria road from the city of Saki, lost control and ran into a metal fence.The motorcycle driver died at the scene of the accident from his injuries.State Traffic Inspectorate of Crimea
+Similar text at index 2425:
+🏍In Evpatoria, a motorcyclist flew into a road fence and died. As reported by the State Traffic Safety Inspectorate of the Ministry of Internal Affairs of the Republic of Kazakhstan, on March 27, on the Simferopol-Evpatoria highway, an 18-year-old Suzuki motorcycle driver did not choose a safe speed when rounding the road, which is why he crashed into a road fence. He died from the injuries he received at the scene of the accident.All the circumstances of what happened are now being clarified. Photo: State Traffic Safety Inspectorate of the Ministry of Internal Affairs for the Republic of Crimea 24 |@tvcrimea24
+Similar text at index 5138:
+An 18-year-old Suzuki motorcycle driver died at night on the Simferopol-Evpatoria highway. The young man lost control and crashed into a fence
+
+Return:
+
+location: Simferopol-Evpatoria highway
+event: 18-year-old Suzuki motorcycle driver dies after losing control and crashing into fence on highway near Evpatoria
+context: 
+🏍In Evpatoria, a motorcyclist flew into a road fence and died. As reported by the State Traffic Safety Inspectorate of the Ministry of Internal Affairs of the Republic of Kazakhstan, on March 27, on the Simferopol-Evpatoria highway, an 18-year-old Suzuki motorcycle driver did not choose a safe speed when rounding the road, which is why he crashed into a road fence. He died from the injuries he received at the scene of the accident.All the circumstances of what happened are now being clarified. Photo: State Traffic Safety Inspectorate of the Ministry of Internal Affairs for the Republic of Crimea 24 |@tvcrimea24
+
+Given: 
+
+{context}
+
+Return:
+"""

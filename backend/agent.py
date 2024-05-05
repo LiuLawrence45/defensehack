@@ -82,3 +82,10 @@ class Agent:
         print(summary_prompt)
         summary_result = self.llm.predict(summary_prompt)
         return (summary_result, media)
+    
+    def extract_event(self, context: List):
+        context_joined = "\n".join(context)
+        event_prompt = EXTRACT_EVENT.format(context=context_joined)
+        print(event_prompt)
+        event_result = self.llm.predict(event_prompt)
+        return event_result
