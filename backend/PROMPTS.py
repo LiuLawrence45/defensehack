@@ -1,5 +1,5 @@
 TWITTER_PROMPT = """
-Given the a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context.
+Given a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context.
 
 For example:
 
