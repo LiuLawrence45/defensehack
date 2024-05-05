@@ -1,0 +1,1106 @@
+[
+    {
+        "_id": "66378096b1b563eb4d670d6b",
+        "event": "Sergei Lavrov celebrates his 74th birthday",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Today, March 21, the head of the Russian diplomatic corps, Minister of Foreign Affairs of the Russian Federation Sergei Viktorovich Lavrov, celebrates his birthday.",
+            "Today, Minister of Foreign Affairs of the Russian Federation Sergei Viktorovich Lavrov celebrates his birthday.",
+            "\ud83c\udf89Today Russian Foreign Minister Sergei Lavrov celebrates his 74th birthday."
+        ],
+        "time": "2024-03-21T05:25:02",
+        "ids": [
+            "06c75ed5-bb2e-5175-9a70-d717dffa0501",
+            "5782c0b1-3f3e-585c-bb15-c73fbd784662",
+            "7a2745d6-86c4-5129-b70e-d5dfaa132096",
+            "b670e1c5-24eb-5574-9b14-f8e8e5e77945",
+            "2a4eb7d8-979f-53f1-bf86-2ad46e16beb0",
+            "b8c9b3a5-a761-5f6a-a0c6-46f55da2bf96"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670e60",
+        "event": "Spring conscription for military service",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Vladimir Putin signed a decree on spring conscription into the army. From April 1 to July 15, 150 thousand people aged 18 to 30 will be called up for military service.",
+            "Vladimir Putin signed a decree on the start of spring conscription. According to the document, from April 1 to July 15, 150 thousand people aged 18 to 30 will be called up for military service in the Russian Federation.",
+            "Vladimir Putin signed a decree on the spring conscription of Russian citizens for military service. According to the new rules that came into force on January 1, citizens aged 18 to 30 years will be subject to conscription for military service (excluding those who turned 27 years old before the end of 2023, and those who are 28 or 29, and who are in the reserve)."
+        ],
+        "time": "2024-03-31T06:11:59",
+        "ids": [
+            "08052c49-e17d-552a-8f0c-2c4224824b5a",
+            "7c9877f0-bbd7-5a26-84bc-c117503a3452",
+            "a8273893-f012-5982-953a-147861dc8bb2",
+            "c7883f3f-8013-591f-b948-b972342991fe",
+            "d810be41-da00-52e0-b051-20d0a9fa2621",
+            "98747b52-f075-5793-a4c2-024982ee4459",
+            "3a5816ea-9e6d-5691-8d3d-c5bbf0f842ff",
+            "43123cf2-06e4-5f73-a0ba-47e6e011a704",
+            "49296d63-8518-564d-ba40-b45cbdb5f491",
+            "24f908e8-464f-55f0-9d0d-177e7cbbf009",
+            "3a109122-a8f2-5350-9dc3-5ee2c1eabbb4",
+            "5a19aea8-b07d-5995-9582-1d3002912af0",
+            "1f3833aa-38de-530c-9509-11f5ca8d0ffa"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee06c9",
+                "id": "08052c49-e17d-552a-8f0c-2c4224824b5a",
+                "time": "2024-03-31 06:11:59",
+                "translation": "Vladimir Putin signed a decree on spring conscription into the army. From April 1 to July 15, 150 thousand people aged 18 to 30 will be called up for military service.\n\nThe Chief of the Main Staff of the General Staff of the Russian Armed Forces, Tsimlyansky, previously stated that all conscripts will be sent to points of permanent deployment of formations and military units of the Russian Armed Forces and other military formations in Russia, except for new regions. Subscribe to Zvezdanews|Suggest news",
+                "external_url": "https://t.me/zvezdanews",
+                "profile_type": "telegram",
+                "description": "The official Telegram channel of Zvezda.",
+                "name": "Zvezda",
+                "attachment_urls": "media/telegram-web/f73ddbb8-985d-4617-bfad-60170310e814.jpeg,kirby/telegram-web/dc6742e0-fc6e-4de3-a4e1-31591d9be13b.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee12ff",
+                "id": "7c9877f0-bbd7-5a26-84bc-c117503a3452",
+                "time": "2024-03-31 06:26:50",
+                "translation": "Russian President Vladimir Putin signed a decree \u00e2\u0080\u009cOn the conscription of citizens of the Russian Federation for military service in April - July 2024 and on the dismissal from military service of citizens undergoing military service by conscription.\u00e2\u0080\u009d Russian Ministry of Defense",
+                "external_url": "https://t.me/mod_russia",
+                "profile_type": "telegram",
+                "description": "The official Telegram account of Russia's Ministry of Defense.",
+                "name": "mod_russia",
+                "attachment_urls": "media/telegram-web/de5a33fd-0420-4e4f-8f1d-394aa99650d3.jpeg,kirby/telegram-web/6fa70131-a14f-4da8-bbcf-99a5dfcf9e09.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee17a4",
+                "id": "a8273893-f012-5982-953a-147861dc8bb2",
+                "time": "2024-03-31 13:22:56",
+                "translation": "Fake: In Russia, 150 thousand men will be mobilized before July 15, Ukrainian Telegram channels report. Truth: Ukrainian propagandists are again deliberately misleading their subscribers. They published a document that has nothing to do with partial mobilization (conscription activities within the framework of which, by the way, ended in Russia in the fall of 2022).\n\nVladimir Putin signed only a decree on the annual spring conscription for military service. You can view it on the official legal information portal. Thus, from April 1 to July 15, 150 thousand people will be called up for service. Important: they, like all other conscripts, will not be in the SVO zone.\n\nDetails about the spring recruitment campaign can be found here. @warfakes",
+                "external_url": "https://t.me/chp_sevastopol",
+                "profile_type": "telegram",
+                "description": "Telegram channel focused on news and events occurring in Sevastopol.",
+                "name": "chp_sevastopol",
+                "attachment_urls": "media/telegram-web/147fc8e6-d45c-4ea2-ba7c-b27dbc5ebe91.jpeg,kirby/telegram-web/36175724-b767-428f-8ec5-c18f3acfbd10.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee1ab9",
+                "id": "c7883f3f-8013-591f-b948-b972342991fe",
+                "time": "2024-03-31 06:14:25",
+                "translation": "Vladimir Putin signed a decree on the start of spring conscription. According to the document, from April 1 to July 15, 150 thousand people aged 18 to 30 will be called up for military service in the Russian Federation.",
+                "external_url": "https://t.me/readovkanews",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of Readovka, a reasonably popular Kremlin mouthpiece established in 2014 after the original invasion of Ukraine. Its Russian nationalist and Kremlin-aligned bias are obvious if you consider that one of the news tabs on the site is \"Empire.\"",
+                "name": "readovka",
+                "attachment_urls": "media/telegram-web/dcdc4578-766d-4875-894c-f9c522514e5c.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee1c7e",
+                "id": "d810be41-da00-52e0-b051-20d0a9fa2621",
+                "time": "2024-03-31 06:27:43",
+                "translation": "Vladimir Putin signed a decree on the spring conscription of Russian citizens for military service. According to the new rules that came into force on January 1, citizens aged 18 to 30 years will be subject to conscription for military service (excluding those who turned 27 years old before the end of 2023 , and those who are 28 or 29, and who are in the reserve).Uncle Slava. Subscribe.",
+                "external_url": "https://t.me/slavaded1337",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of a Russian social media influencer who goes by the name \"Uncle Slava\".",
+                "name": "slavaded1337",
+                "attachment_urls": "media/telegram-web/8977b017-d1dd-45e4-91bd-643c55dfa843.jpeg,kirby/telegram-web/fe4ca999-3572-41ec-9507-e59cb37025c6.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee1619",
+                "id": "98747b52-f075-5793-a4c2-024982ee4459",
+                "time": "2024-03-31 17:26:44",
+                "translation": "Vladimir Putin signed a decree on spring conscription into the army.\n\nFrom April 1 to July 15, 150 thousand people from 18 to 30 years old will be called up for military service in the Russian Federation.",
+                "external_url": "https://t.me/WarDonbass",
+                "profile_type": "telegram",
+                "description": "A Telegram channel serving as a vector for Kremlin propaganda regarding Ukraine. Features lots of military disinformation and Russian nationalist rhetoric, along with State Weakness and Dysfunction narrative strains.",
+                "name": "wardonbass",
+                "attachment_urls": "media/telegram-web/bb3f5d6f-2af0-40f7-924a-1d6375dfbad0.jpeg,kirby/telegram-web/0dc7e94f-faec-40de-b933-b3f9712cb4e6.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee0c31",
+                "id": "3a5816ea-9e6d-5691-8d3d-c5bbf0f842ff",
+                "time": "2024-03-31 08:07:34",
+                "translation": "\u00e2\u0080\u008b\u00e2\u0080\u008bPutin conscripted 150,000 people over the age of 18 into military service\n\nAccording to the signed document, from April 1 to July 15, 150,000 people will be called up for military service in the Russian Federation.\n\nRussians aged 18 to 30 are waiting for service. In the Russian Federation, military drafts are traditionally held twice a year: in spring and autumn \u00f0\u009f\u0094\u00bbsign up",
+                "external_url": "https://t.me/ukrpravda_news",
+                "profile_type": "telegram",
+                "description": "The official Telegram channel of the \"Ukrainska Pravda\" news outlet.",
+                "name": "ukrpravda_news",
+                "attachment_urls": "media/telegram-web/d57c49ee-005f-46b5-b42a-0da1763c6273.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee0d18",
+                "id": "43123cf2-06e4-5f73-a0ba-47e6e011a704",
+                "time": "2024-03-31 09:08:42",
+                "translation": "The President of the Russian Federation signed a decree on spring conscription. From April 1 to July 15, 150 thousand people aged 18 to 30 should be drafted.",
+                "external_url": "https://t.me/submarineru",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of a Russian mil blogger who focuses on then Russian Navy. Specifically, the submarines of the Russian Navy.",
+                "name": "submarineru",
+                "attachment_urls": "media/telegram-web/38088d0c-2985-4dfa-9a43-067e0d2193d7.mp4,kirby/telegram-web/a018e208-ca57-441a-af3d-c71b80b86f9f.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee0daf",
+                "id": "49296d63-8518-564d-ba40-b45cbdb5f491",
+                "time": "2024-03-31 08:19:06",
+                "translation": "\u00e2\u009d\u0097\u00ef\u00b8\u008fPutin signed a decree on spring conscription. From April 1 to July 15, 150 thousand people aged 18 to 30 should be conscripted.",
+                "external_url": "https://t.me/russiansolda",
+                "profile_type": "telegram",
+                "description": "Telegram channel of a Russian with information on the front lines of Russian troops.",
+                "name": "Russiansolda",
+                "attachment_urls": "media/telegram-web/ea076071-1477-426e-aeba-826b48f6a6ef.jpeg,kirby/telegram-web/b271b898-a1a1-4fc6-9ff7-683205679dba.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee09e9",
+                "id": "24f908e8-464f-55f0-9d0d-177e7cbbf009",
+                "time": "2024-03-31 08:51:34",
+                "translation": "Forwarded from: TSAPLIENKO_UKRAINE FIGHTS\n\u00e2\u009d\u0097\u00ef\u00b8\u008f the Kremlin plans to mobilize 150 thousand Russians by July 15. This is stated in the new decree on spring conscription, which Putin has already signed",
+                "external_url": "https://t.me/myrotvoretsnews",
+                "profile_type": "telegram",
+                "description": "A Telegram channel affiliated with the Ukrainian website Myrotvorets.",
+                "name": "myrotvoretsnews",
+                "attachment_urls": "media/telegram-web/0fecd46d-ef44-4585-b66a-09b94b5367b7.jpeg,kirby/telegram-web/a6a3a809-6a55-4517-944e-8fbaf37b1389.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee0c2b",
+                "id": "3a109122-a8f2-5350-9dc3-5ee2c1eabbb4",
+                "time": "2024-03-31 07:07:10",
+                "translation": "Vladimir Putin signed a decree on the spring conscription of Russian citizens for military service. According to the new rules that came into force on January 1, citizens aged 18 to 30 years will be subject to conscription for military service (excluding those who turned 27 years old before the end of 2023 , and those who are 28 or 29, and who are in reserve).\u00f0\u009f\u0094\u008aCrimean News",
+                "external_url": "https://t.me/krymskij",
+                "profile_type": "telegram",
+                "description": "A Telegram account spreading Kremlin propaganda primarily about Crimea, but about other parts of Ukraine also.",
+                "name": "krymskij",
+                "attachment_urls": "media/telegram-web/b707ecab-305b-4532-9936-50f238bb5be8.jpeg,kirby/telegram-web/d8dffa6f-e7ff-4fde-8856-8eb185c962fc.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee0f63",
+                "id": "5a19aea8-b07d-5995-9582-1d3002912af0",
+                "time": "2024-03-31 06:21:46",
+                "translation": "Vladimir Putin signed a decree on spring conscription into the army.\n\nFrom April 1 to July 15, 150 thousand people aged 18 to 30 will be called up for military service in the Russian Federation. Subscribe to Mash",
+                "external_url": "https://t.me/breakingmash",
+                "profile_type": "telegram",
+                "description": "A Kremlin-aligned Telegram channel posting news du jour.",
+                "name": "breakingmash",
+                "attachment_urls": "media/telegram-web/ad163629-afcd-421c-ad26-ae7bef7de1db.jpeg,kirby/telegram-web/ad0544ed-9f27-4ba0-b4ed-ba769c38e43b.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee093d",
+                "id": "1f3833aa-38de-530c-9509-11f5ca8d0ffa",
+                "time": "2024-03-31 07:38:15",
+                "translation": "Vladimir Putin signed a decree on the spring conscription into the army. From April 1 to July 15, 150,000 people aged 18 to 30 are planned to be conscripted into military service in Russia. Send news to Focus. Watch Focus's YouTube channel.",
+                "external_url": "https://t.me/fastfocus",
+                "profile_type": "telegram",
+                "description": "A Russian-language Telegram channel posting news about the war in Ukraine.",
+                "name": "FastFocus",
+                "attachment_urls": "media/telegram-web/5a436286-35bf-4656-b1a2-6d87365f14aa.jpeg,kirby/telegram-web/e8b0042f-a373-49e9-969c-3e5cfc98190b.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670f77",
+        "event": "Vladimir Putin addresses the nation following the official results of the Russian Presidential elections",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Vladimir Putin addressed the Russians after the Central Election Commission announced the official results of voting in the presidential election.",
+            "Today the official voting results for the Russian Presidential elections have been summed up. An extremely important election campaign for our country, society and citizens has ended.",
+            "The past campaign was intense and extremely responsible, because by and large we were choosing the path that Russia would take next, choosing the future for ourselves and our children. And the significance of this event was understood by the absolute majority of voters who came to the elections.",
+            "Once again, I thank everyone who took part in the voting, regardless of who you voted for. The main thing is that you have proven that you respect your civic duty, value freedom of choice and your voice, and each of your votes, I repeat, was of great importance.",
+            "Thank you for your support. For me this is more important than a formal victory in the elections. This is support for the political and economic course of our country, our common results, which, of course, should be greater, but are already making Russia even stronger and more independent today.",
+            "A few words about the work of election commissions at all levels. As always, you acted clearly, competently, on the principles of transparency and in strict accordance with the law, and in our historical territories, members of election commissions were an example for voters, showing courage and courage. I thank you all for your trust. I will do everything in my power to justify him. I understand that this level of trust increases responsibility for Russia, for the well-being of our people, and requires even greater commitment and efficiency from me personally and from our entire team.",
+            "We will do everything to ensure that the large-scale national projects and programs that I recently spoke about in detail in the Address are implemented. The elections showed that Russia today is one big, friendly family. We are walking together along the historical path we have chosen. Confident in themselves, in their abilities and their future."
+        ],
+        "time": "2024-03-21T10:05:37",
+        "ids": [
+            "88d470c1-cfc3-57bd-aea3-c7521ebee855",
+            "0198eee2-7ac6-58b7-b5cd-efe4d5e008bf",
+            "2848e237-276a-5f0c-9cbe-ebbbe9cd17a3",
+            "4da8b3b9-fb9c-5d66-8737-e980ed17a7f1",
+            "b84759bb-b7c5-5264-b10a-6e86d8781547"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670f74",
+        "event": "Putin outlines principles for migrants living in Russia, emphasizing respect for traditions, language, culture, and history",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Putin named the decisive principle that determines whether a migrant can live in Russia: \u201cThe principle is that only those who respect our traditions, language, culture, and history can come and live and work in Russia,\u201d the president said.",
+            "Putin demanded to change approaches to migration policy in the Russian Federation. According to the president, illegal migration is a breeding ground for extremism and other crimes. Existing electronic databases are not enough to mitigate the risks of illegal migration, he believes. Only those who respect its traditions, language and culture should be able to come and live in Russia, Putin added."
+        ],
+        "time": "2024-04-02T08:57:00",
+        "ids": [
+            "2518e2cf-516a-5710-abe7-062112c064f2",
+            "a787f0e8-31c3-54a2-8174-2dc1c9994e44",
+            "ed812b2b-c64c-56a6-aa8f-a75f6eca9ec9",
+            "6027db33-89c3-560b-a065-3a6469398a04"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670f71",
+        "event": "Day of Unity of the Peoples of Russia and Belarus",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Today is the Day of Unity of the Peoples of Russia and Belarus. A day that is designed to remind us of the age-old unity of our peoples, peace and respect, which helps us overcome difficulties together and move towards prosperity.",
+            "April 2 is the Day of Unity of the Peoples of Russia and Belarus.",
+            "The Day of Unity of the Peoples of Russia and Belarus is celebrated annually on April 2. The holiday symbolizes the common historical destinies and centuries-old friendship of the two fraternal peoples.",
+            "The decision to establish the Day of Unity of Nations was made on April 2, 1996. It was on this day that the agreement on the formation of the Community of Russia and Belarus was signed, which marked the beginning of the mutual integration of the two countries.",
+            "Today, Russia and Belarus are fruitfully interacting on a wide range of issues, developing partnership in trade, economic, defense, humanitarian, scientific, technical, cultural and other spheres. In addition, Belarus is one of the five largest trading partners of Russia and ranks first among the CIS countries."
+        ],
+        "time": "2024-04-02T04:59:42",
+        "ids": [
+            "7675795b-ee72-56bd-bdf7-85cda3aa2b21",
+            "e618fad6-6a36-5927-a16c-cd99f05e95cc",
+            "596dca5b-9802-5fa0-9f89-3807687429fb"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670f56",
+        "event": "Vladimir Putin wins presidential elections with 87.28% of votes",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "The Central Election Commission of the Russian Federation officially declared Putin the winner of the presidential elections in the Russian Federation. He allegedly received 87.28% of the votes (76.2 million votes).",
+            "The final turnout allegedly amounted to 77.49%; according to the Central Election Commission, 87.5 million people took part in the voting.",
+            "The Central Election Commission officially declared Vladimir Putin President of Russia. 87.28% of voters voted for him. The turnout was 77.49% of people, which is a historical figure, noted the Chairman of the Central Election Commission, Ella Pamfilova."
+        ],
+        "time": "2024-03-21T08:46:23",
+        "ids": [
+            "cb7f2051-90f7-5831-837a-49e8bc12ac8e",
+            "730568ed-2bef-57d8-9d18-f9ebe208ad19",
+            "0fffb61d-1bea-5ce5-87f2-f21c3e1cfb50",
+            "4522c481-de85-5bda-90a3-cd052bc885d8",
+            "8663e5b2-a9a0-58d7-a1d7-9efed9bbb364",
+            "980d6507-cf14-5d62-8f58-494653baf7be"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670eec",
+        "event": "Russian Investigative Committee opens criminal case on financing of terrorism involving Burisma Holdings and senior officials from the US and NATO countries",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "The Investigative Committee opened a criminal case on the financing of terrorism by \u201cofficials of the United States and NATO countries.\u201d The Russian Investigative Committee believes that funds received from through the \u201coil and gas company Burisma Holdings, operating in Ukraine.\u201d The company is associated with the son of the American president, Hunter Biden.",
+            "As a result, the Investigative Committee opened a case under Part 4 of Art. 205.1 of the Criminal Code of the Russian Federation (financing of terrorism).",
+            "Based on the results of an inspection organized in connection with an appeal from State Duma deputies, a criminal case was opened on the financing of terrorism. The Main Investigation Department of the Investigative Committee of Russia conducted an investigation following an appeal from a group of deputies of the State Duma of the Federal Assembly of the Russian Federation and other persons about the financing of terrorist activities by senior officials of the United States and NATO countries. Based on its results, a criminal case was initiated on the grounds of a crime under Part 4 of Art. 205.1 of the Criminal Code of the Russian Federation (financing of terrorism).",
+            "It has been established that funds received through commercial organizations, in particular, the oil and gas company Burisma Holdings, operating in Ukraine, have been used in recent years to carry out terrorist acts in the Russian Federation, as well as beyond its borders in order to eliminate prominent political and public figures and causing economic damage.",
+            "The investigation, in cooperation with other intelligence services and financial intelligence, verifies the sources of income and further movement of funds in the amount of several million US dollars, the involvement of specific individuals from among government officials, public and commercial organizations of Western countries. In addition, the connections of direct perpetrators of terrorist acts with foreign curators, organizers and sponsors."
+        ],
+        "time": "2024-04-09T12:55:04",
+        "ids": [
+            "acbfd4eb-5d6f-5aa2-9fba-3b3f1a19b7fc",
+            "c8930fdf-bd0c-54e3-9c20-fa2d7ddc850c",
+            "fc376d07-1762-5ffa-9a5d-1faee820612a",
+            "92fd3e3c-e114-52ce-8d23-cbd3beb1bbea"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee8a73",
+                "id": "acbfd4eb-5d6f-5aa2-9fba-3b3f1a19b7fc",
+                "time": "2024-04-09 13:21:13",
+                "translation": "The Investigative Committee opened a criminal case on the financing of terrorism by \u00e2\u0080\u009cofficials of the United States and NATO countries.\u00e2\u0080\u009d The Russian Investigative Committee believes that funds received from through the \u00e2\u0080\u009coil and gas company Burisma Holdings, operating in Ukraine.\u00e2\u0080\u009d The company is associated with the son of the American president, Hunter Biden.\n\nAs a result, the Investigative Committee opened a case under Part 4 of Art. 205.1 of the Criminal Code of the Russian Federation (financing of terrorism).\n\nEarlier, United Russia Andrei Krasov, Communist Party deputy Nikolai Kharitonov and SRZP deputy Yana Lantratova asked the department to investigate \u00e2\u0080\u009cthe organization, financing and conduct of terrorist acts by the United States, Ukraine and other Western countries\u00e2\u0080\u009d against the Russian Federation.",
+                "external_url": "https://t.me/astrapress",
+                "profile_type": "telegram",
+                "description": "A Telegram channel run by self-proclaimed independent Russian journalists who have been \"subjected to censorship or persecution\" in Russia.",
+                "name": "astrapress",
+                "attachment_urls": "media/telegram-web/b5f9201d-b9d3-4ae5-bf94-3dd3a59013ef.mp4,kirby/telegram-web/b0d446fb-942f-4171-97fd-a4e1f6aabc52.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee8ddf",
+                "id": "c8930fdf-bd0c-54e3-9c20-fa2d7ddc850c",
+                "time": "2024-04-09 12:55:04",
+                "translation": "Based on the results of an inspection organized in connection with an appeal from State Duma deputies, a criminal case was opened on the financing of terrorism. The Main Investigation Department of the Investigative Committee of Russia conducted an investigation following an appeal from a group of deputies of the State Duma of the Federal Assembly of the Russian Federation and other persons about the financing of terrorist activities by senior officials of the United States and NATO countries. Based on its results, a criminal case was initiated on the grounds of a crime under Part 4 of Art. 205.1 of the Criminal Code of the Russian Federation (financing of terrorism).\n\nIt has been established that funds received through commercial organizations, in particular, the oil and gas company Burisma Holdings, operating in Ukraine, have been used in recent years to carry out terrorist acts in the Russian Federation, as well as beyond its borders in order to eliminate prominent political and public figures and causing economic damage.\n\nThe investigation, in cooperation with other intelligence services and financial intelligence, verifies the sources of income and further movement of funds in the amount of several million US dollars, the involvement of specific individuals from among government officials, public and commercial organizations of Western countries. In addition, the connections of direct perpetrators of terrorist acts with foreign curators, organizers and sponsors. Commentary from the official representative of the Russian Investigative Committee Svetlana PetrenkoSubscribe to Sledkom",
+                "external_url": "https://t.me/sledcom_press",
+                "profile_type": "telegram",
+                "description": "The Official Telegram channel of the Investigative Committee of the Russian Federation.",
+                "name": "sledcom_press",
+                "attachment_urls": "media/telegram-web/79239039-c998-4543-99f3-d50d63bbe330.mp4,kirby/telegram-web/ef1cced0-e2c0-45d1-b53d-0a6f79f7cda4.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee9448",
+                "id": "fc376d07-1762-5ffa-9a5d-1faee820612a",
+                "time": "2024-04-09 13:51:34",
+                "translation": "The Russian Investigative Committee has opened a criminal case on the financing of terrorist activities by senior officials of the United States and NATO countries.\n\nIt was established that funds received through commercial organizations, in particular, the oil and gas company Burisma Holdings, operating in Ukraine, have been used in recent years to carry out terrorist acts in Russia, as well as abroad, in order to eliminate prominent political and public figures and causing economic damage.\n\nThe investigation, in cooperation with other intelligence services and financial intelligence, is checking the sources of income and further movement of funds in the amount of several million US dollars, the involvement of specific individuals from among government officials, public and commercial organizations in Western countries.\n\nThe connections between the direct perpetrators of terrorist attacks and foreign curators, organizers and sponsors are also being worked out.",
+                "external_url": "https://t.me/nationconsunion",
+                "profile_type": "telegram",
+                "description": "A pro-Russian Telegram channel.",
+                "name": "nationconsunion",
+                "attachment_urls": "media/telegram-web/adbb4021-272d-4477-b69d-535425280159.jpeg,kirby/telegram-web/e212a99b-dd7e-49ef-b55d-1312a5e9e978.mp4"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670ece",
+        "event": "Submariner Day of the Russian Navy celebrated with ceremonial events",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Submariner Day of the Russian Navy is celebrated on March 19. Ceremonial events are held at the bases of the Submarine Forces, at the main fleet bases, and in the regions of the Russian Federation.",
+            "Today is the Day of the Submariner of the Russian Navy - on this day, ceremonial events are held at all bases of submarine forces, at the main fleet bases in the regions of Russia.",
+            "According to tradition, the holiday began with the ceremonial raising of St. Andrew's flags and flags of color on submarines at their bases in Vilyuchinsk and Vladivostok."
+        ],
+        "time": "2024-03-19T03:01:08",
+        "ids": [
+            "ddfb1da1-4b10-5d7f-9242-cb6c634139e7",
+            "d3fae66e-c27f-5ec0-aac1-ebc0fd1e613d",
+            "2ef34346-e58a-576e-af2d-eda6131d3add",
+            "11b52128-d41e-51e7-b119-eaab7357bd72"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee9aae",
+                "id": "2ef34346-e58a-576e-af2d-eda6131d3add",
+                "time": "2024-03-19 07:25:40",
+                "translation": "Forwarded from: NEWS\nToday is the Day of the Submariner of the Russian Navy - on this day, ceremonial events are held at all bases of submarine forces, at the main fleet bases in the regions of Russia.\n\nAccording to tradition, the holiday began with the ceremonial raising of St. Andrew's flags and flags of color on submarines at their bases in Vilyuchinsk and Vladivostok.",
+                "external_url": "https://t.me/informburo_sfd",
+                "profile_type": "telegram",
+                "description": "A Telegram channel spreading disinformation about the West, Ukraine, and the Russian-Ukrainian war.",
+                "name": "informburo_sfd",
+                "attachment_urls": "media/telegram-web/8ecb9d76-9cff-488e-b6e1-068dd58a1a23.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee9705",
+                "id": "11b52128-d41e-51e7-b119-eaab7357bd72",
+                "time": "2024-03-19 11:34:00",
+                "translation": "Today Russia celebrates Submariner Day. \u00e2\u0080\u009cNowhere is there such equality in the face of death as on a submarine, on which either everyone dies or everyone wins,\u00e2\u0080\u009d said submariner, hero of the USSR Magomet Gadzhiev.\n \nToday, our submariners continue to defend the Fatherland, successfully completing all the tasks assigned to them. And especially for them, congratulations on the holiday are flying straight from Krynoki.\n\nThe @wargonzo project team also joins them. Happy holiday! *our project exists with funds from subscribers, help card 4276 3801 4149 1378",
+                "external_url": "https://t.me/wargonzo",
+                "profile_type": "telegram",
+                "description": "The Telegram account of Semyon Pegov, an influential military propagandist.",
+                "name": "wargonzo",
+                "attachment_urls": "media/telegram-web/97b2361d-97dd-4495-a906-2e8386c62df3.jpeg,kirby/telegram-web/3089cded-d727-43b5-b86d-59cc9a341d22.mp4"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670eba",
+        "event": "Ukrainian military uses AI-equipped drones for high-accuracy strikes on targets in Russia",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Ukrainian military began to use drones with artificial intelligence for strikes on targets in Russia, which allows to hit specific objects on the territory of the aggressor country with high accuracy - CNN with reference to sources.",
+            "They have this thing called 'machine vision,' which is a type of AI. Basically, you take a model, put it on a chip, and train that model to identify the geography and target it's on its way. When it's finally deployed, it will be able to identify where it is, explained Noah Sylvia, an analyst at the Royal Joint Services Institute, a British think tank.",
+            "Ukrainian drones attacking targets in Russia have begun to integrate a basic form of artificial intelligence. The strikes themselves and the flight plan are carried out by Kiev after coordination with Western curators and under the control of foreign intelligence services, writes CNN, citing its sources familiar with the development program of strike drones of the Kyiv regime, commenting on today\u2019s UAV attack in Tatarstan.",
+            "Ukrainian drones with artificial intelligence are attacking Russian refineries, - CNNFlights are determined in advance by Ukraine and its allies. The drones follow a flight plan and can hit targets with an accuracy of a few meters. Each drone has a terminal computer with satellite and terrain data."
+        ],
+        "time": "2024-04-02T09:33:26",
+        "ids": [
+            "7b71b9fc-1a0c-5d68-bd8d-58081aade0f4",
+            "f5ea2c84-49dd-5473-b325-5a7c35a8cfd6",
+            "63979b43-55ce-5666-a9d6-62b84bc072bb"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670eb7",
+        "event": "Crews of the Buk-M1 air defense system provide reliable cover by shooting down Ukrainian Leleka UAVs",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Crews of the Buk-M1 air defense system of the air defense units of the Vostok group of troops provide reliable cover for troops. \u201cWe mainly work on unmanned aerial vehicles that adjust the fire of both rocket and cannon artillery, cruise missiles,\u201d said the head of the air defense missile system crew with the call sign \u201cOlym.\u201d \u201cWe shoot down Ukrainian Leleka reconnaissance unmanned aerial vehicles, which fly at fairly high altitudes \u2013 from 1.5 to 2.5 kilometers.\u201d",
+            "Forwarded from: Russian Ministry of Defense"
+        ],
+        "time": "2024-04-11T09:43:00",
+        "ids": [
+            "eccdc5f0-17b8-5681-9196-c03d3701e89d",
+            "bdc9b866-665a-537b-a52b-788a9e320626",
+            "96b35d30-257a-56a8-948a-5ecab191d800"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670eb1",
+        "event": "Day of formation of the Border Guard Service",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Today is the Day of formation of the Border Guard Service in the Republic of Crimea. If possible, please publish a video and congratulations from you. Thank you in advance"
+        ],
+        "time": "2024-04-02T06:52:04",
+        "ids": [
+            "88356e8b-6eed-5ccb-9d80-898e72f2b590",
+            "e666d12f-c10c-5e50-9ed0-e49917664397",
+            "bdb1b0d7-e9d7-5ef5-bc25-e7b9964a6ef2"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670ea8",
+        "event": "Modernization of the X-101 cruise missile with increased warhead capacity from 400 kg to 800 kg",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "The enemy has modernized the X-101 cruise missile: the warhead has been increased from 450 kg to 800 \u2013 Defense Express.",
+            "It is reported that our defense industry has modernized the X-101 cruise missile: now its warhead carries almost twice as much explosives.",
+            "The Russian X-101 missile has become twice as dangerous: they increased the warhead from 450 to 800 kg, - Defense Express."
+        ],
+        "time": "2024-03-30T05:33:26",
+        "ids": [
+            "78725657-98db-504c-a760-08f7717953f4",
+            "de204b3e-e97f-5263-afdc-7b041abbfcc2",
+            "b34348a5-b9ab-5824-8398-0a05fca461b5"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee128c",
+                "id": "78725657-98db-504c-a760-08f7717953f4",
+                "time": "2024-03-31 02:05:17",
+                "translation": "UA Insider | Ukraine | NewPhoto,\u00e2\u009d\u0097\u00ef\u00b8\u008fThe enemy has modernized the X-101 cruise missile: the warhead has been increased from 450 kg to 800 \u00e2\u0080\u0093 Defense Expr... Let me remind you that the Russian Federation has modernized the warhead of the X101 missile from 400 kg to 800 kg.\n\nThe rocket has become more dangerous. It is possible that they will also be used today.Subscribe to Insider|Submit content",
+                "external_url": "https://t.me/insiderukr",
+                "profile_type": "telegram",
+                "description": "The Telegram account of Insider UA, a West-aligned channel spreading counter-Kremlin talking points and updates about geopolitics.",
+                "name": "insiderUKR",
+                "attachment_urls": "media/telegram-web/82a903bf-885f-4b02-bdf2-241967e86cf8.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee1d24",
+                "id": "de204b3e-e97f-5263-afdc-7b041abbfcc2",
+                "time": "2024-03-31 10:37:38",
+                "translation": "Forwarded from: Frontline Bird\nIt is reported that our defense industry has modernized the X-101 cruise missile: now its warhead carries almost twice as much explosives.\n\nThe weight of the previous warhead was about 400 kg. In the new X-101, we are not talking about a simple increase in the weight of one warhead, but about solutions with the placement of two separate warheads inside the rocket.\n\nDon't forget also about a large additional number of heat traps. Front bird.\nSubscribe",
+                "external_url": "https://t.me/ags_donbass",
+                "profile_type": "telegram",
+                "description": "Telegram channel for Russian LPR/DPR news aggregator.",
+                "name": "Ags_Donbass",
+                "attachment_urls": "media/telegram-web/7d20d531-2900-4f3f-9c99-142752dbf196.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670e91",
+        "event": "VFU UAVs attack the village of Golmovsky, urging residents to take safety measures",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "\u26a1\ufe0fVFU UAVs attack the village of Golmovsky. Residents should leave the streets, move away from windows, take safety measures, stay close to shelters. Once again I urge residents of Gorlovka to be extremely attentive and careful, the enemy is actively using unmanned aircraft. Take care of yourself and your loved ones\u203c\ufe0f@Prikhodko1970"
+        ],
+        "time": "2024-03-12T09:37:35",
+        "ids": [
+            "5a3042ba-33c2-57c9-8c6a-3b4f6aeb9965",
+            "80e2702c-40d6-5aa6-bb5d-1c175f9377d3",
+            "7c295720-0cd2-571c-8ac2-fd48ac67916a",
+            "db555433-706f-54ac-a3a5-fe5a0d742e5b",
+            "128da82f-9653-534c-9900-52faea4360ed",
+            "591faf99-31d3-54cf-982f-a81b8cb5e61a"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee8036",
+                "id": "5a3042ba-33c2-57c9-8c6a-3b4f6aeb9965",
+                "time": "2024-04-09 11:30:20",
+                "translation": "\u00e2\u009a\u00a1\u00ef\u00b8\u008fVFU UAVs attack the village of Golmovsky. Residents should leave the streets, move away from windows, take safety measures, stay close to shelters. Once again I urge residents of Gorlovka to be extremely attentive and careful, the enemy is actively using unmanned aircraft. Take care of yourself and your loved ones\u00e2\u0080\u00bc\u00ef\u00b8\u008f@Prikhodko1970",
+                "external_url": "https://t.me/prikhodko1970",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of Ivan Prikhodko, the Kremlin's temporarily installed \"mayor\" of Gorlivka.",
+                "name": "Prikhodko1970",
+                "attachment_urls": "media/telegram-web/612211fa-df60-4c73-a58e-955cf1e8d4e6.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee2e69",
+                "id": "80e2702c-40d6-5aa6-bb5d-1c175f9377d3",
+                "time": "2024-03-29 10:48:45",
+                "translation": "\u00e2\u009a\u00a1\u00ef\u00b8\u008fVFU UAVs attack the village of Golmovsky. Residents should leave the streets, move away from windows, take safety measures, stay close to shelters. Once again I urge residents of Gorlovka to be extremely attentive and careful, the enemy is actively using unmanned aircraft. Take care of yourself and your loved ones\u00e2\u0080\u00bc\u00ef\u00b8\u008f@Prikhodko1970",
+                "external_url": "https://t.me/prikhodko1970",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of Ivan Prikhodko, the Kremlin's temporarily installed \"mayor\" of Gorlivka.",
+                "name": "Prikhodko1970",
+                "attachment_urls": "media/telegram-web/4aeda53d-55b5-406f-863f-6e05133081fc.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee2de4",
+                "id": "7c295720-0cd2-571c-8ac2-fd48ac67916a",
+                "time": "2024-03-29 10:55:15",
+                "translation": "Ivan Prikhodko:\u00e2\u009a\u00a1\u00ef\u00b8\u008fVFU UAVs are attacking the village of Golmovsky. Residents should leave the streets, move away from windows, take safety measures, stay close to shelters. Once again I urge residents of Gorlovka to be extremely attentive and careful, the enemy is actively using unmanned aircraft. Take care of yourself and your loved ones\u00e2\u0080\u00bc\u00ef\u00b8\u008f@Prikhodko1970",
+                "external_url": "https://t.me/gorlovkanewsru",
+                "profile_type": "telegram",
+                "description": "Telegram channel providing the latest Gorlovka news.",
+                "name": "gorlovkanewsru",
+                "attachment_urls": "media/telegram-web/0982c23f-4b74-40a9-95ea-b9a48a011642.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee772b",
+                "id": "128da82f-9653-534c-9900-52faea4360ed",
+                "time": "2024-04-09 11:41:04",
+                "translation": "\u00e2\u009c\u00a8UAVs of the Ukrainian armed forces attack the village of Golmovsky. Residents are advised to immediately leave the streets, move away from windows, take all security measures and stay closer to shelters.\u00f0\u009f\u0094\u00b9Once again I appeal to the residents of Gorlovka with a request to be as vigilant and careful as possible, the enemy is actively using drones. Take care of yourself and your loved ones\u00e2\u0080\u00bc\u00ef\u00b8\u008f@gorlovka- \"Gorlovka. Today\".#gorlovka",
+                "external_url": "https://t.me/gorlovka",
+                "profile_type": "telegram",
+                "description": "A Kremlin mouthpiece spreading propaganda about the \"Russian World.\"",
+                "name": "gorlovka",
+                "attachment_urls": "media/telegram-web/a1c1f30d-5b77-4217-b872-3579df1f7699.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee2a13",
+                "id": "591faf99-31d3-54cf-982f-a81b8cb5e61a",
+                "time": "2024-03-29 10:48:53",
+                "translation": "Forwarded from: Prikhodko RIK\n\u00e2\u009a\u00a1\u00ef\u00b8\u008fVFU UAVs attack the village of Golmovsky. Residents should leave the streets, move away from windows, take safety measures, stay close to shelters. Once again I urge residents of Gorlovka to be extremely attentive and careful, the enemy is actively using unmanned aircraft. Take care of yourself and your loved ones\u00e2\u0080\u00bc\u00ef\u00b8\u008f@Prikhodko1970",
+                "external_url": "https://t.me/gorlowka_now",
+                "profile_type": "telegram",
+                "description": "Telegram channel providing Gorlovka city news.",
+                "name": "Gorlowka_now",
+                "attachment_urls": "media/telegram-web/607d495d-b3c9-4a35-b3a0-c21113cfa08e.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670e3a",
+        "event": "33-year-old man detained for publishing online calls for violence against Russians",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "The FSB detained a Crimean man suspected of public calls for extremist activities. A 33-year-old man published calls for violence against Russians on the Internet.",
+            "For this he faces up to five years in prison. Subscribe to RIA Novosti Crimea",
+            "The FSB detained a Crimean citizen suspected of public calls for extremist activities. A 33-year-old man published calls for violence against Russians on the Internet.",
+            "For this he faces up to five years in prison. Do you think this is a fair sentence?",
+            "The FSB detained a Crimean man who published online calls for violence against Russians. A man who on the Internet called for violence against Russian people was detained in Crimea, the FSB department for the Republic and the city of Sevastopol reported.",
+            "For publishing online calls for violence against Russians, a 33-year-old man faces up to five years in prison."
+        ],
+        "time": "2024-03-12T08:34:24",
+        "ids": [
+            "5e46f75b-7cba-504d-9bbc-d8c78b6ea58a",
+            "8dd973c8-684e-5f5a-9930-04a4cc05de47",
+            "dffac45c-73e9-5b4b-ae0f-7839490b4cc7"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670e76",
+        "event": "Vladimir Putin addresses Russians after presidential elections, emphasizing the importance of the support and the future path of Russia.",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Vladimir Putin addressed Russians after the presidential elections. Main statements of the head of state: \u2014 The past campaign was extremely intense and responsible. \u2014 The absolute majority of voters understood the significance of the elections. \u2014 You have proven that you respect civic duty. \u2014 Election commissions at all levels acted clearly, competently, in accordance with all laws. \u2014 Thank you all for your trust! I will do everything in my power to justify him. \u2014 All ideas and proposals of presidential candidates will be used in the interests of Russia\u2019s development. \u2014 The elections showed that Russia today is one big friendly family.",
+            "\ud83c\udf99V.V. Putinak\u2019s address to citizens on the results of the Russian Presidential elections (March 21, 2024)\ud83d\udcacToday the official voting results for the Russian Presidential elections have been summed up. An extremely important election campaign for our country, society and citizens has ended. The past campaign was intense and extremely responsible, because by and large we were choosing the path that Russia would take next, choosing the future for ourselves and our children. And the significance of this event was understood by the absolute majority of voters who came to the elections. Once again, I thank everyone who took part in the voting, regardless of who you voted for. The main thing is that you have proven that you respect your civic duty, value freedom of choice and your voice, and each of your votes, I repeat, was of great importance."
+        ],
+        "time": "2024-03-21T10:05:37",
+        "ids": [
+            "6c430d3a-f642-592a-9fdb-d154f811cec3",
+            "0198eee2-7ac6-58b7-b5cd-efe4d5e008bf",
+            "2848e237-276a-5f0c-9cbe-ebbbe9cd17a3",
+            "4da8b3b9-fb9c-5d66-8737-e980ed17a7f1",
+            "b84759bb-b7c5-5264-b10a-6e86d8781547"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670e17",
+        "event": "Putin instructs FSB to strengthen anti-terrorism work and suppress attempts to provoke unrest using Russophobia",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Putin instructed the FSB to seriously strengthen anti-terrorism work in all areas.",
+            "Attempts to provoke unrest in Russia using Russophobia must be strictly suppressed, the president added.",
+            "He added that the West was actively using cross-border radical terrorist groups against Russia, encouraging their aggression against the Russian Federation."
+        ],
+        "time": "2024-03-19T11:16:39",
+        "ids": [
+            "0d53526d-f752-568d-bcfc-839522fb647e",
+            "162931fa-e9d0-5ca4-adbf-337466c6daa9",
+            "6f103466-3489-5763-b462-5d2485a67a50"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee966f",
+                "id": "0d53526d-f752-568d-bcfc-839522fb647e",
+                "time": "2024-03-19 11:18:46",
+                "translation": "\u00f0\u009f\u0087\u00b7\u00f0\u009f\u0087\u00baPutin instructed the FSB to seriously strengthen anti-terrorist work in all areas\n\nAttempts to provoke unrest in Russia using Russophobia must be severely suppressed, the president added.\u00e2\u009d\u0097\u00ef\u00b8\u008fHe added that the West was actively using cross-border radical terrorist groups against Russia, encouraging their aggression against the Russian Federation",
+                "external_url": "https://t.me/journalbd",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of a Russian mil blogger.",
+                "name": "journalbd",
+                "attachment_urls": "media/telegram-web/a23b45e9-9868-4bc7-abb9-1c5f46c13497.jpeg,kirby/telegram-web/ac01aa71-44d6-4408-8324-ba41be64c819.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee9790",
+                "id": "162931fa-e9d0-5ca4-adbf-337466c6daa9",
+                "time": "2024-03-19 11:17:38",
+                "translation": "Putin instructed the FSB to seriously strengthen anti-terrorism work in all areas. Attempts to provoke unrest in Russia using Russophobia must be strictly suppressed, the president added. He added that the West was actively using cross-border radical terrorist groups against Russia, encouraging their aggression against the Russian Federation.",
+                "external_url": "https://t.me/ostashkonews",
+                "profile_type": "telegram",
+                "description": "The telegram channel of Russian talkshow host and journalist, Ruslan Ostashko.",
+                "name": "OstashkoNews",
+                "attachment_urls": "media/telegram-web/44465922-6c38-4f2d-84c4-928cd0a07234.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670de8",
+        "event": "Journalist Mikhail Zygar put on the wanted list by the Russian Ministry of Internal Affairs",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "The Russian Ministry of Internal Affairs has put journalist Mikhail Zygar on the wanted list (included in the register of foreign agents). According to information in the Ministry of Internal Affairs database, he is wanted 'under an article of the Criminal Code.' In March, a criminal case was opened against the journalist for fake news about the Russian army.@kommersant",
+            "The Ministry of Internal Affairs of Russia has put on the wanted list the journalist Mikhail Zygar (recognized as a foreign agent), against whom a case of fakes has been opened against the Armed Forces of the Russian Federation, it follows from the department's database.",
+            "The Ministry of Internal Affairs has put the writer and journalist Mikhail Zygar on the wanted list. The Mediazona publication drew attention to the card."
+        ],
+        "time": "2024-04-09T19:12:01",
+        "ids": [
+            "177f4d38-ea48-5261-8b88-5ab91ec6367c",
+            "77a603e7-b8e2-53c5-bf1a-6c077014586a",
+            "26590d23-7e59-5f8f-9d88-3f235059009c",
+            "4534b7f1-e78d-5fdc-abd6-2d720db36c7e"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee77ce",
+                "id": "177f4d38-ea48-5261-8b88-5ab91ec6367c",
+                "time": "2024-04-09 19:13:05",
+                "translation": "The Russian Ministry of Internal Affairs has put journalist Mikhail Zygar on the wanted list (included in the register of foreign agents). According to information in the Ministry of Internal Affairs database, he is wanted \u00e2\u0080\u009cunder an article of the Criminal Code.\u00e2\u0080\u009d In March, a criminal case was opened against the journalist for fake news about the Russian army.@kommersant",
+                "external_url": "https://t.me/kommersant",
+                "profile_type": "telegram",
+                "description": "The official Telegram account of Kommersant, Russia's premiere and influential (and Kremlin-aligned) business journal.",
+                "name": "kommersant",
+                "attachment_urls": "media/telegram-web/7b785138-585a-4bc4-aa6a-339699bd4734.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee8400",
+                "id": "77a603e7-b8e2-53c5-bf1a-6c077014586a",
+                "time": "2024-04-09 19:12:01",
+                "translation": "The Ministry of Internal Affairs of Russia has put on the wanted list the journalist Mikhail Zygar (recognized as a foreign agent), against whom a case of fakes has been opened against the Armed Forces of the Russian Federation, it follows from the department\u00e2\u0080\u0099s database.",
+                "external_url": "https://t.me/Tass_agency",
+                "profile_type": "telegram",
+                "description": "The official Telegram account of TASS, a Kremlin mouthpiece and one of the leading Russian news agencies.",
+                "name": "tass_agency",
+                "attachment_urls": "media/telegram-web/7f47d72c-ad2d-4b0f-a954-bc00d4ad4692.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee79a1",
+                "id": "26590d23-7e59-5f8f-9d88-3f235059009c",
+                "time": "2024-04-09 19:19:06",
+                "translation": "The Ministry of Internal Affairs has put the writer and journalist Mikhail Zygar on the wanted list. The Mediazona publication drew attention to the card.\n\nAccording to the text, Zygar is wanted \u00e2\u0080\u009cunder an article of the Criminal Code.\u00e2\u0080\u009d Which one exactly is not reported.\n\nThe pro-government anonymous telegram channel Shot wrote in March that a case could be opened against Mikhail Zygar because of a post about the murders and rapes of Russian soldiers that they committed in Bucha.\n\nZygar has not lived in Russia since 2022.TelegramMediazona. ExclusiveThe Ministry of Internal Affairs has put the writer Mikhail Zygar on the wanted list\n\nMediazona drew attention to the wanted card.\n\nAccording to information in the Ministry of Internal Affairs database, Zygar is wanted...VIEW MESSAGE",
+                "external_url": "https://t.me/meduzalive",
+                "profile_type": "telegram",
+                "description": "Meduza is an online Russian news source that is currently in exile in Latvia. It used to be headed by Galina Timchenko, who was the editor-in-chief for Lenta.ru from 2004 to 2014. However, she was fired in 2014 and replaced by the pro-Putin Aleksei Goreslavsky, who has since left to work in the Kremlin. Following her dismissal, Timchenko created Meduza as an aggregator of handpicked Russian-language news. Over the years, Meduza has suffered a series of controversies, and while it is an anti-Kremlin outlet, it is known to post occasional eyebrow-raising content. It is blocked in Russia.",
+                "name": "meduzalive",
+                "attachment_urls": "media/telegram-web/0176a726-4dd3-4eab-9b9d-0f7e481bd4b8.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee7d7c",
+                "id": "4534b7f1-e78d-5fdc-abd6-2d720db36c7e",
+                "time": "2024-04-09 19:25:07",
+                "translation": "The Russian Ministry of Internal Affairs has put the foreign agent journalist Mikhail Zygar on the wanted list, against whom a case of fakes has been opened against the Russian Armed Forces, follows from the department\u00e2\u0080\u0099s database",
+                "external_url": "https://t.me/WarDonbass",
+                "profile_type": "telegram",
+                "description": "A Telegram channel serving as a vector for Kremlin propaganda regarding Ukraine. Features lots of military disinformation and Russian nationalist rhetoric, along with State Weakness and Dysfunction narrative strains.",
+                "name": "wardonbass",
+                "attachment_urls": "media/telegram-web/6d95f38d-d430-4e84-86a7-ce1577c04406.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670de0",
+        "event": "Vladimir Putin wins presidential election with 87.28% of the votes",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "The Central Election Commission of the Russian Federation officially declared Putin the winner of the presidential elections in the Russian Federation. He allegedly received 87.28% of the votes (76.2 million votes).",
+            "The Central Election Commission officially declared Vladimir Putin President of Russia. 87.28% of voters voted for him. The turnout was 77.49% of people, which is a historical figure, noted the Chairman of the Central Election Commission, Ella Pamfilova.",
+            "On March 21, the Russian Central Election Commission summed up the results of the presidential elections in the Russian Federation. According to the election results, the current head of the Russian state, self-nominated Vladimir Putin, won - 87.28%. In second place is the candidate from the Communist Party of the Russian Federation Nikolai Kharitonov - 4.31%. He is followed by Vladislav Davankov (New People) - 3.85% and Leonid Slutsky (LDPR) - 3.20%."
+        ],
+        "time": "2024-03-19T12:07:38",
+        "ids": [
+            "510a1787-2cb3-5f67-90df-afaba018a79a",
+            "730568ed-2bef-57d8-9d18-f9ebe208ad19",
+            "0fffb61d-1bea-5ce5-87f2-f21c3e1cfb50",
+            "4522c481-de85-5bda-90a3-cd052bc885d8",
+            "c3a571b7-b403-5e3c-a20a-0b8a79b744f2",
+            "d59fc4b4-f303-5ace-a531-6323f4268c15",
+            "157b59f4-5b7e-510c-9606-c2d6208cc871",
+            "250ad9e0-337d-5222-bb70-4213fdc490e9",
+            "bc3b269a-37d5-543e-bfe2-6bf743d3f407",
+            "980d6507-cf14-5d62-8f58-494653baf7be"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee9778",
+                "id": "157b59f4-5b7e-510c-9606-c2d6208cc871",
+                "time": "2024-03-19 12:07:38",
+                "translation": "The main results of the presidential elections are an unconditional victory and maximum support for Vladimir Putin by the country's residents.\n\nA historic result - 87.3% of voters voted for the current President of Russia. United Russia has a significant contribution to this result. Of the nearly 76 million people who voted for our candidate, 31.2 million are party members and supporters.\n\nUnited Russia took part in the presidential campaign from the very beginning. Of the 3.5 million signatures collected in support of Vladimir Putin\u00e2\u0080\u0099s nomination for elections, 2 million were collected by the party. The results of the presidential elections became the main topic of the Presidium of the General Council.\n\nI thank all my fellow party members for this great joint work. First of all, our regional branches, \u00e2\u0080\u009cprimary\u00e2\u0080\u009d branches of deputies, senators, and volunteers. Everyone gave their best to the common cause.\n\nOur next common task is to carry out the President\u00e2\u0080\u0099s instructions, which he voiced in his Address. Their synchronization with the People's Program of the Party. This work has already begun. Our regional branches are included in it.",
+                "external_url": "https://t.me/turchak_andrey",
+                "profile_type": "telegram",
+                "description": "The Telegram account of Andrey Turchak, the former governor of Pskov Oblast' and currently the Secretary of the General Council of the United Russia party.",
+                "name": "turchak_andrey",
+                "attachment_urls": "media/telegram-web/a6d88a37-79a7-4a80-b72e-faa9be933f20.jpeg,kirby/telegram-web/1b3928f4-a052-4e3d-a203-2f439fdf7bbf.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670ddc",
+        "event": "Russia has launched the production of a modernized Kh-101 missile with two warheads, increasing the total warhead weight to 800 kg while reducing the missile's flight range.",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Russia has launched the production of a modernized Kh-101 missile with two warheads. Defense Express writes that the new version of the missile has two separate warheads with a total weight of 800 kg. This is twice as much as the missile was previously equipped with a warhead weighing about 400 kg.",
+            "The use of the modernized Kh-101 became known after the analysis of the missile shot down during the attack on the night of March 29.",
+            "It was possible to install an additional warhead thanks to the reduction in the size of the fuel tank. This led to a reduction in the missile's flight range, but even so, such an X-101 has enough room to maneuver during flight."
+        ],
+        "time": "2024-03-29T12:36:00",
+        "ids": [
+            "fcca4332-c6c7-5ba2-8135-a6a31d2d2b8d",
+            "e518cf1b-b4cb-5302-9083-964cd3a0b887",
+            "8372f379-06fe-5865-9ff6-92b5f2796226",
+            "37b943ba-7fe1-53f3-bdf8-65f0e45a46c8",
+            "af838f51-42da-50ce-a57c-8106a4933555"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee3b6c",
+                "id": "fcca4332-c6c7-5ba2-8135-a6a31d2d2b8d",
+                "time": "2024-03-29 20:27:47",
+                "translation": "The Russian Federation began producing Kh-101 missiles with two warheads: the weight increased to 800 kg, -Defense Express.\n\nThe second warhead has ready-made cubic-shaped striking elements. The media note that they have significant damaging effects against people.\n\nThe addition was made possible by reducing the size of the fuel tank. At the same time, this means a reduction in the flight range of the X-101. But in the case of a reduction from 5500 km to ~2200 km, this does not matter much for Ukrainians. GU>Subscribe",
+                "external_url": "https://t.me/g_ukr",
+                "profile_type": "telegram",
+                "description": "A Ukrainian Telegram channel that reports news from the country.",
+                "name": "g_ukr",
+                "attachment_urls": "media/telegram-web/0bfc899c-6201-4431-9924-4793c29bb711.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee38f9",
+                "id": "e518cf1b-b4cb-5302-9083-964cd3a0b887",
+                "time": "2024-03-29 12:36:00",
+                "translation": "It\u00e2\u0080\u0099s interesting that back in January, during Sergei Shoigu\u00e2\u0080\u0099s visit to the Raduga Design Bureau, one of the workers said that \u00e2\u0080\u009cthe warhead was increased from 450 kilograms to 800\u00e2\u0080\u009d (time code 0:50), while pointing to the X-59MK.\nObviously, an employee of the enterprise made a mistake, mixing up the missiles, and in fact they increased the warhead of the Kh-101 cruise missiles, reducing the range, which was already possible without\nShow more\nThe fuel tank is enough for the entire territory of Ukraine.\nContinuing the post\nhttps://vk.com/wall-123538639_4110998\nMilitary Informant",
+                "external_url": "https://vk.com/public123538639",
+                "profile_type": "vk",
+                "description": "The VK account of well-known Russian military blogger.",
+                "name": "Military Informant",
+                "attachment_urls": "media/vk/41c4363a-7234-4e0f-85c4-8a58286f94a8.mp4"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670ddb",
+        "event": "Russian Armed Forces advancing in Semyonovka and surrounding areas",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "After the liberation of Orlovka and Tonenkogo, the forces of the 'Center' group with attached units of the 1st Army Corps entered the outskirts of Semyonovka and are moving forward, knocking out the enemy.",
+            "In the Avdeevka direction there are heavy battles for Berdychi. Russian troops have occupied the forest belt to the east Semyonovsky rate. Advancement in an area up to 750 m wide to a depth of up to 200 m, Ukrainian military analysts report and publish a map, traditionally underestimating the advance of our troops.",
+            "From Orlovka, Russian units managed to enter the southern outskirts of Semyonovka: according to preliminary information, they took control of at least half of the village."
+        ],
+        "time": "2024-03-29T19:10:01",
+        "ids": [
+            "2574ac52-d0ef-561a-9bae-e2fdfd5e4635",
+            "0b1bb1c8-39e5-5cd5-8b99-9e3522ef2d7f",
+            "01395898-3454-5401-a3ba-413bda53f757"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee249b",
+                "id": "2574ac52-d0ef-561a-9bae-e2fdfd5e4635",
+                "time": "2024-03-29 19:10:01",
+                "translation": "Offensive near Avdeevka: \u00e2\u0080\u009c\u00f0\u009f\u0085\u00be\u00ef\u00b8\u008fbrave\u00e2\u0080\u009d enter Semyonovka\u00e2\u0096\u00aa\u00ef\u00b8\u008fAfter the liberation of Orlovka and Tonenkogo, the forces of the \u00e2\u0080\u009cCenter\u00e2\u0080\u009d group with attached units of the 1st Army Corps entered the outskirts of Semyonovka and are moving forward, knocking out the enemy.\u00e2\u0096\u00aa\u00ef\u00b8\u008f\"In the Avdeevka direction there are heavy battles for Berdychi. Russian troops have occupied the forest belt to the east Semyonovsky rate. Advancement in an area up to 750 m wide to a depth of up to 200 m,\u00e2\u0080\u009d Ukrainian military analysts report and publish a map, traditionally underestimating the advance of our troops.",
+                "external_url": "https://t.me/swodki",
+                "profile_type": "telegram",
+                "description": "A generic Telegram account that echoes Kremlin talking points and spreads anti-Western and Russian nationalist rhetoric.",
+                "name": "swodki",
+                "attachment_urls": "media/telegram-web/758659de-e7df-407e-bce7-bc9c2f09562b.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee74fc",
+                "id": "01395898-3454-5401-a3ba-413bda53f757",
+                "time": "2024-04-09 05:25:18",
+                "translation": "\u00e2\u009d\u0097\u00ef\u00b8\u008f\u00f0\u009f\u0087\u00b7\u00f0\u009f\u0087\u00ba\u00f0\u009f\u0087\u00ba\u00f0\u009f\u0087\u00a6Avdeevka direction: advance of the Russian Armed Forces on a wide front, situation as of 14.00 April 8, 2024 To the west of Avdeevki, Russian troops are conducting offensive operations in several sectors from Berdycheya to Pervomaisky.\u00e2\u0096\u00aa\u00ef\u00b8\u008fIn the Berdychey area, the enemy is exerting flank pressure from Novobakhmutovka, counterattack forging groups of infantry with the support of armored vehicles. However, at the moment the village is almost completely under the control of the Russian Armed Forces. Between Berdychi and Orlovka, they also managed to reduce the \u00e2\u0080\u009cpocket\u00e2\u0080\u009d that arose after the first days of the breakthrough to populated areas. \u00e2\u0096\u00aa\u00ef\u00b8\u008f From Orlovka, Russian units managed to enter the southern outskirts of Semyonovka: according to preliminary information, they took control of at least half of the village. At the same time, the enemy retains the opportunity to supply its forces through landings along the O0542 route and a beam to the north. \u00e2\u0096\u00aa\u00ef\u00b8\u008fTo the west of Tonenkoye, the Russian Armed Forces were also able to advance in the direction of Umansky, although they have not yet been able to reach the outskirts of the settlement. However, without the occupation of Semyonovka and an attack from Orlovki through the vicinity of the S051801 highway, it is unlikely that fighting for Umanskoye will begin. \u00e2\u0096\u00aa\u00ef\u00b8\u008fRussian troops are also advancing in the Pervomaiskoye area. Judging by the footage of objective control by the enemy, the Russian Armed Forces launched an attack north of Staroavdeevsky pond on the Vodyanaya river and are fighting for positions north of the Utyatnik pond, which are located less than a kilometer from the eastern outskirts of Netailovo. High resolution map#MapsDenazification\u00e2\u00ac\u0086\u00ef\u00b8\u008f\u00e2\u00ac\u0087\u00ef\u00b8\u008f\u00e2\u008f\u008f\u00ef\u00b8\u008f*\u00ef\u00b8\u008f\u00e2\u0083\u00a3\u00e2\u009e\u0096",
+                "external_url": "https://t.me/savchanel_denacific2022",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of a Russian mil blogger.",
+                "name": "savchanel_denacific2022",
+                "attachment_urls": "media/telegram-web/4110d91e-b8d9-44cf-a65c-5d81c3584259.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670dad",
+        "event": "Legal procedures for the admission of Crimea and Sevastopol to the Russian Federation were completed",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Exactly 10 years ago, the legal procedures for the admission of Crimea and Sevastopol to the Russian Federation were completed. Russian President Vladimir Putin signed all the relevant documents on March 21, 2014.",
+            "Chronicles of the Crimean Spring: March 21, 2014 Legal procedures related to the admission of the Republic of Crimea and the city of Sevastopol to the Russian Federation have been completed. The relevant documents were signed by Russian President Vladimir Vladimirovich Putin."
+        ],
+        "time": "2024-03-21T04:59:01",
+        "ids": [
+            "5e48ad81-d39c-5e4c-9c9b-acbaef360006",
+            "369f98ae-1052-5606-adbc-e86618b2a7d7",
+            "95390cf4-0ee9-5058-8d84-86b0da491b80",
+            "7951c5cb-b2d2-5af2-b6e6-5e53c1ebee1d"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670dd2",
+        "event": "10th anniversary of the formation of the Russian FSB Directorate for the Republic of Crimea and the city of Sevastopol",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Today marks ten years since the formation of the Russian FSB Directorate for the Republic of Crimea and the city of Sevastopol. Over the years, a long and difficult path has been traveled. The enemies of our Motherland, the enemies of Crimea, did not give up trying to harm us in various ways. But FSB officers always honestly and selflessly fulfilled their duty and ensured the security of our peninsula.",
+            "Today, in the context of a special military operation, the work of security officers is especially important. Thanks to their professionalism, vigilance, and efficiency, many terrorists and saboteurs, traitors and collaborators of foreign intelligence services were detained, and hundreds of lives were saved.",
+            "On behalf of all Crimeans, I thank the employees of the Department for their effective work and for the reliable protection of Crimea. I wish everyone good health, prosperity and new successes in serving Russia!",
+            "Razvozhaev also congratulated the Russian FSB Directorate for Crimea and Sevastopol on its tenth anniversary. He noted that FSB employees have been at the forefront of protecting Russia\u2019s interests since the return of Crimea and Sevastopol to their native harbor. From the first day of the Russian Spring, people had to be protected from saboteurs, to prevent provocations, to ensure security. And the employees of the FSB Directorate created in Crimea coped with this task with honor."
+        ],
+        "time": "2024-03-31T06:03:08",
+        "ids": [
+            "c3c1b8bf-984d-5157-b941-8c390efddd17",
+            "84832eeb-d479-5792-9c92-e4081f945793",
+            "961a3a94-a0b4-5b72-a849-512390f678cd"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee1a5c",
+                "id": "c3c1b8bf-984d-5157-b941-8c390efddd17",
+                "time": "2024-03-31 06:03:08",
+                "translation": "Forwarded from: Aksyonov Z 82\nToday marks ten years since the formation of the Russian FSB Directorate for the Republic of Crimea and the city of Sevastopol.\n \nOver the years, a long and difficult path has been traveled. The enemies of our Motherland, the enemies of Crimea, did not give up trying to harm us in various ways. But FSB officers always honestly and selflessly fulfilled their duty and ensured the security of our peninsula.\n \nToday, in the context of a special military operation, the work of security officers is especially important. Thanks to their professionalism, vigilance, and efficiency, many terrorists and saboteurs, traitors and collaborators of foreign intelligence services were detained, and hundreds of lives were saved.\n \nOn behalf of all Crimeans, I thank the employees of the Department for their effective work and for the reliable protection of Crimea. I wish everyone good health, prosperity and new successes in serving Russia!",
+                "external_url": "https://t.me/rian_crimea",
+                "profile_type": "telegram",
+                "description": "The official Telegram account of RIA's Crimean office.",
+                "name": "rian_crimea",
+                "attachment_urls": "media/telegram-web/3e7c7cb9-3226-473e-ba39-c5ec6bc2fe4b.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee13ee",
+                "id": "84832eeb-d479-5792-9c92-e4081f945793",
+                "time": "2024-03-31 07:53:21",
+                "translation": "Aksyonov Z 82Photo, Today marks ten years since the formation of the Russian FSB Directorate for the Republic of Crimea and the city... Razvozhaev also congratulated the Russian FSB Directorate for Crimea and Sevastopol on its tenth anniversary. He noted that FSB employees have been at the forefront of protecting Russia\u00e2\u0080\u0099s interests since the return of Crimea and Sevastopol to their native harbor. \u00e2\u0080\u009cFrom the first day of the Russian Spring, people had to be protected from saboteurs, to prevent provocations, to ensure security. And the employees of the FSB Directorate created in Crimea coped with this task with honor,\u00e2\u0080\u009d the governor wrote on social networks. In addition, Razvozhaev emphasized that employees of the FSB Directorate for Crimea and Sevastopol are selflessly suppressing attempts by saboteurs, extremists and spies to undermine peaceful life on the peninsula. Subscribe to RIA Novosti Crimea",
+                "external_url": "https://t.me/rian_crimea",
+                "profile_type": "telegram",
+                "description": "The official Telegram account of RIA's Crimean office.",
+                "name": "rian_crimea",
+                "attachment_urls": "media/telegram-web/7a14e430-046b-46b1-b50e-d0d19509ffb8.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee15c9",
+                "id": "961a3a94-a0b4-5b72-a849-512390f678cd",
+                "time": "2024-03-31 07:57:05",
+                "translation": "Today is 10 years since the founding of the Russian FSB Directorate for the Republic of Crimea and the city of Sevastopol,\u00e2\u0080\u009d Razvozhaev\n\u00e2\u00a0\u0080\nSince 2014, since the return of Sevastopol and Crimea to their native harbor, you have been at the forefront of protecting Russia\u00e2\u0080\u0099s national interests. From the first day of the Russian Spring, people had to be protected from saboteurs, to prevent provocations, and to ensure security. And the employees of the FSB Directorate created in Crimea coped with this task with honor.\n\u00e2\u00a0\u0080\nMajor historical events always very clearly show the confrontation between good and evil. You selflessly stop the attempts of saboteurs, spies and extremists to undermine our peaceful life. You figure out, neutralize, prevent, save innocent people.\n\u00e2\u00a0\u0080\nDear veterans of security agencies, employees of the FSB Directorate for the Republic of Crimea and Sevastopol! Thank you for your courage, professionalism, courage and perseverance.\n\nHappy holiday!@crimea24new",
+                "external_url": "https://t.me/crimea24new",
+                "profile_type": "telegram",
+                "description": "Russian Telegram channel reporting on Crimean, Russian, Ukrainian, and world news.",
+                "name": "crimea24new",
+                "attachment_urls": "media/telegram-web/cf292fe2-1a48-4a90-a2cf-986172a94b2a.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670d8d",
+        "event": "Putin criticizes current migration policy and demands new approaches",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "V. Putin criticized the current migration policy: \u201cWhen you start to understand the circumstances of a particular case, a specific crime, it turns out that the person got to Russia without any special problems, went through all the formalities, got a work patent, often having a whole bunch of offenses behind him, sometimes malicious ones. Then he submits an application for citizenship, even without even knowing the basic Russian language. What is needed here are modern digital, electronic biometric data bases. Those that are working now are, apparently, not enough. They do not allow us to fully mitigate the risks and relapses of illegal emigration. Moreover, our \"compatriots whose ancestors grew up in the most central regions of our country sometimes cannot obtain citizenship for years. I have already said that we need to deeply, radically update our approaches to migration policy.\u201d",
+            "The President stated that \u201conly those who respect our traditions, language, culture and history can come to live and work in Russia. This principle should be decisive.\u201d",
+            "Putin named the decisive principle that determines whether a migrant can live in Russia: \u201cThe principle that only those who respect our traditions, language, culture, history can come and live and work in Russia,\u201d the president said."
+        ],
+        "time": "2024-04-02T08:57:00",
+        "ids": [
+            "b1aa7445-4988-5f8b-a3e0-7d3dd9e25a8c",
+            "a787f0e8-31c3-54a2-8174-2dc1c9994e44",
+            "ed812b2b-c64c-56a6-aa8f-a75f6eca9ec9",
+            "6027db33-89c3-560b-a065-3a6469398a04"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670d65",
+        "event": "Authorities assisted in accrediting foreign media for transparent information support of the all-Crimean referendum",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "Chronicles of the Crimean Spring: March 12, 2014 The authorities of the republic provided assistance in accrediting representatives of foreign media for the most transparent information support of the all-Crimean referendum."
+        ],
+        "time": "2024-03-12T04:59:02",
+        "ids": [
+            "7e032cc1-a08f-5186-b562-98ccb66e6386",
+            "ccd396a1-8e5a-5959-ab83-40e8a74a59f5",
+            "a4c89962-e08f-5a12-8832-b3ff6887a32f"
+        ],
+        "telegram_posts": [],
+        "twitter_posts": []
+    },
+    {
+        "_id": "66378096b1b563eb4d670d78",
+        "event": "Spring conscription campaign for military service begins, with conscripts serving only within Russia and not participating in SVO tasks",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                105.318756,
+                61.52401
+            ]
+        },
+        "context": [
+            "On April 1, the annual spring conscription for military service begins in Russia. Ukrainian propaganda will use this news in every way to create ridiculous fakes, which we warned our readers about.",
+            "Vladimir Putin signed a decree on the start of spring conscription. According to the document, from April 1 to July 15, 150 thousand people aged 18 to 30 will be called up for military service in the Russian Federation.",
+            "Russia is warning about possible fakes in connection with the spring conscription. Next is the truth about how it will happen. On April 1, the conscription campaign begins. It will take place in all regions except the Far North. Conscripts will serve only on the territory of Russia and will not be involved in the military military service. This information was once again confirmed by the head of the Main Organizational and Mobilization Directorate of the General Staff of the Russian Armed Forces, Colonel General Yevgeny Burdinsky."
+        ],
+        "time": "2024-03-29T12:30:46",
+        "ids": [
+            "d2df5201-f341-527f-8a9f-8de896a07ffa",
+            "c7883f3f-8013-591f-b948-b972342991fe",
+            "0f908371-0ad1-54b7-a64d-d7fe4485cc38"
+        ],
+        "telegram_posts": [
+            {
+                "_id": "6636de274721676be6ee1ab9",
+                "id": "c7883f3f-8013-591f-b948-b972342991fe",
+                "time": "2024-03-31 06:14:25",
+                "translation": "Vladimir Putin signed a decree on the start of spring conscription. According to the document, from April 1 to July 15, 150 thousand people aged 18 to 30 will be called up for military service in the Russian Federation.",
+                "external_url": "https://t.me/readovkanews",
+                "profile_type": "telegram",
+                "description": "The Telegram channel of Readovka, a reasonably popular Kremlin mouthpiece established in 2014 after the original invasion of Ukraine. Its Russian nationalist and Kremlin-aligned bias are obvious if you consider that one of the news tabs on the site is \"Empire.\"",
+                "name": "readovka",
+                "attachment_urls": "media/telegram-web/dcdc4578-766d-4875-894c-f9c522514e5c.jpeg"
+            },
+            {
+                "_id": "6636de274721676be6ee2246",
+                "id": "0f908371-0ad1-54b7-a64d-d7fe4485cc38",
+                "time": "2024-03-29 12:30:46",
+                "translation": "Russia is warning about possible fakes in connection with the spring conscription. Next is the truth about how it will happen. On April 1, the conscription campaign begins. It will take place in all regions except the Far North. Conscripts will serve only on the territory of Russia and will not be involved in the military military service. This information was once again confirmed by the head of the Main Organizational and Mobilization Directorate of the General Staff of the Russian Armed Forces, Colonel General Yevgeny Burdinsky.\n\nWe urge you to be more attentive: Ukrainian propaganda is doing everything possible to spread fakes and mislead people. Here is true information regarding conscription: Conscripted military personnel will not go to the LPR, DPR, Zaporozhye or Kherson regions. Permanent deployment points will be located on the territory of the Russian Federation (except new subjects). Departure from collection points begins on April 15. The conscription service period is 12 months, as before. Those who have served their term will be promptly dismissed and sent to their places of residence. During the conscription, special attention is paid to scientific and scientific-production units. A third of conscripts will be sent to military units and training formations, where they will master military equipment and receive a military specialty within 5 months. On April 16, the General Staff will launch a \u00e2\u0080\u009cdirect line\u00e2\u0080\u009d on conscription issues.\n\nDetailed information about conscription and military service is available on the official Internet portal of the Russian Ministry of Defense.\u00f0\u009f\u0093\u00aeSubscribe to LOMOVKA",
+                "external_url": "https://t.me/lomovkaa",
+                "profile_type": "telegram",
+                "description": "A Russian Telegram channel that posts global news and news that pertains to Russia.",
+                "name": "lomovkaa",
+                "attachment_urls": "media/telegram-web/3c5b46c5-f74f-4cdf-9fe7-23ec0c2bd6f6.jpeg"
+            }
+        ],
+        "twitter_posts": []
+    }
+]

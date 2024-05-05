@@ -106,16 +106,34 @@ async def mongo_one(query) -> List:
 
 @app.post("/search")
 async def search(request: SearchRequest):
-
     events = await mongo_one(request.query)
-    telegram_posts = []
-    for event in events:
-        event['posts'] = []
+    for event in tqdm(events):
+        event['telegram_posts'] = []
+
+        # Add telegram logs
         for id in event["ids"]:
             post = mongo.search_telegram_id(id)
             if post is not None:
-                telegram_posts.append(post)
-                event['posts'].append(post)
+                event['telegram_posts'].append(post)
+
+        event['twitter_posts'] = []
+        # Add twitter posts
+        context  = [
+            f"Event details: {event['event']}",
+            f"Event description: {" ".join(event['context'])}"
+        ]
+        event_date = datetime.fromisoformat(event['time'])
+        start_time = event_date - timedelta(days=1)
+        end_time = event_date + timedelta(days=1)
+        results = agent.run_search(context, start_time, end_time)
+        relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
+        summary = agent.summarize(context, relevant_tweets_list)
+        summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['time'], event['location'])
+        event['twitter_posts'].append(summary)
+
+        
+
+
 
 
     # # Twitter parsing
@@ -142,21 +160,45 @@ async def search(request: SearchRequest):
     # return final_results
 
 import asyncio
+from tqdm import tqdm
 
 if __name__ == "__main__":
 
     async def main():
-        events = await mongo_one("What has happened with Kyiv in Ukraine?")
-        telegram_posts = []
-        for event in events:
-            event['posts'] = []
+        events = await mongo_one("over the past two months dk300 bombing with tanks in south russia")
+        for i, event in enumerate(tqdm(events)):
+            event.pop("embedding", None)
+            event['telegram_posts'] = []
+
+            # Add telegram logs
             for id in event["ids"]:
                 post = mongo.search_telegram_id(id)
                 if post is not None:
-                    telegram_posts.append(post)
-                    event['posts'].append(post)
+                    post.pop("body", None)
+                    event['telegram_posts'].append(post)
 
-        
+            event['twitter_posts'] = []
+
+
+            # Add twitter posts
+            # if (len(event['telegram_posts']) > 2 and i < 10):
+            #     context  = [
+            #         f"Event details: {event['event']}",
+            #         f"Event description: {" ".join(event['context'])}"
+            #     ]
+            #     event_date = datetime.fromisoformat(event['time'])
+            #     start_time = event_date - timedelta(days=1)
+            #     end_time = event_date + timedelta(days=1)
+            #     results = agent.run_search(context, start_time, end_time)
+            #     relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
+            #     summary = agent.summarize(context, relevant_tweets_list)
+            #     summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['time'], event['location'])
+            #     event['twitter_posts'].append(summary)
+
+        with open("results/CACHE_1_nontwitter.json", "w") as f:
+            json.dump(events, f, default=str, indent = 4)
+            print("SAVED!@!!")
+
     asyncio.run(main())
 
 # if __name__ == "__main__":
