@@ -32,10 +32,11 @@ class MongoDBClient:
         collection = self.client["telegram"]["data"]
 
         try:
-            results = collection.find({"_id": id})
-            ids = [result["_id"] for result in results]  
-            print("Document IDs: ", ids)
-            return ids
+            results = collection.find({"id": id})
+            # ids = [result["_id"] for result in results]  
+            # print("Document IDs: ", ids)
+            print("Results are: ", results)
+            return results
         
         except Exception as e:
             print("Error occurred: ", e)
