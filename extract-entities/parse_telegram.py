@@ -36,7 +36,8 @@ def extract_information(row: dict) -> Node:
     #     translation=row.get("translation")
     # )
     # return node
-    print(row["translation"])
+    print(dict)
+    print("#"*50)
 
     # return Node(row)
 
