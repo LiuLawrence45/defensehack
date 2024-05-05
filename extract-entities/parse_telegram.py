@@ -1,0 +1,48 @@
+import os
+import openai
+from openai import OpenAI
+from string import Template
+import json
+import glob
+from timeit import default_timer as timer
+from dotenv import load_dotenv
+from time import sleep
+from tqdm import tqdm
+from typing import List
+from node import Node
+import csv
+from parser import Parser
+
+
+# Parse the given CSV for telegram
+def parse_csv(file_path: str) -> List[Node]:
+    nodes = []
+    with open(file_path, newline = '') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            node = extract_information(row)
+            nodes.append(node)
+
+
+# Extract information from the given row
+def extract_information(row: dict) -> Node:
+    dict = Parser.extract_events(row["translation"])
+
+    # node = Node(
+    #     id=row.get("id"),
+    #     sender=row.get("sender"),
+    #     message=row.get("message"),
+    #     date=row.get("date"),
+    #     translation=row.get("translation")
+    # )
+    # return node
+    print(dict)
+    print("#"*50)
+
+    # return Node(row)
+
+
+
+if __name__ == "__main__":
+    path = "datasets/top_10_telegram.csv"
+    parse_csv(path)

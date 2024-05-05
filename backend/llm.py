@@ -15,13 +15,14 @@ class LLM:
         self.openai = openai.OpenAI()
         self.client = ChatOpenAI(temperature=0, model="gpt-4-turbo")
 
-    def predict(self, prompt, model="gpt-3.5-turbo-0125"):
+    def predict(self, prompt, model="gpt-4-turbo"):
         response = self.openai.chat.completions.create(
             model=model,
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt}
-            ]
+            ],
+            temperature=0
         )
         return response.choices[0].message.content
 
