@@ -27,56 +27,7 @@ class SearchRequest(BaseModel):
 import googlemaps
 gmaps = googlemaps.Client(key='AIzaSyDcGkvKU23hRBD5LBmxaOTT2A-2NT4mCk8')
 
-
-@app.post("/search")
-async def search(request: SearchRequest):
-    query_to_run = query(request.query)
-    query_dict = query_to_run.__dict__
-    location = gmaps.geocode(query_dict["location"])
-    
-    try: 
-        loc = (location[0]['geometry']['location']['lat'], location[0]['geometry']['location']['lng'])
-        print("Location is: ", location)
-    except Exception as e:
-        print("Reached error: ", e)
-        loc = None
-
-    results = mongo.search_events(start_time = query_to_run.start_date, end_time = query_to_run.end_date, coordinates = loc) # gets us a list of events
-
-    print("Time: ", results["time"], "\nEvent: ", results["event"])
-    print("*"*50)
-    # MongoDB Parsing
-    # for id in results[]
-
-
-    # Twitter parsing
-    final_results = []
-    for event in results[:10]:
-        event["_id"] = str(event["_id"])
-        context  = [
-            f"Event details: {event['title']}",
-            f"Event description: {" ".join(event['context'])}"
-        ]
-        event_date = datetime.strptime(event.date, '%Y-%m-%d')
-        start_time = event_date - timedelta(days=1)
-        end_time = event_date + timedelta(days=1)
-        results = agent.run_search(context, start_time, end_time)
-        relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
-        summary = agent.summarize(context, relevant_tweets_list)
-        summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['date'], event['location'])
-        final_results.append(summary)
-    print(final_results)
-
-
-    if not final_results:
-        raise HTTPException(status_code=404, detail="No results found")
-    return final_results
-
-
-if __name__ == "__main__":
-    # query_to_run = query("over the past two months dk300 bombing with tanks in south russia")
-
-    QUERY_PROMPT = """
+QUERY_PROMPT = """
 Given a natural language query, decompose the query into a structured query object with the following fields:
 
 start_date: datetime
@@ -122,30 +73,130 @@ Return, in valid JSON output:
 
 """
     # query_dict = query_to_run.__dict__
-    chain = ChatPromptTemplate.from_template(QUERY_PROMPT) | ChatOpenAI() | StrOutputParser()
-    result = chain.invoke({"context": "What has happened with SP300 missles in Ukraine?", "date": datetime.now().strftime("%Y-%m-%d")})
+chain = ChatPromptTemplate.from_template(QUERY_PROMPT) | ChatOpenAI() | StrOutputParser()
+
+# Fetching all events from mongo_one.
+async def mongo_one(query) -> List:
+
+    result = chain.invoke({"context": query, "date": datetime.now().strftime("%Y-%m-%d")})
     try:
         query_dict = json.loads(result)
         print("Valid JSON:", query_dict)
     except json.JSONDecodeError:
         print("Invalid JSON received from chain.invoke")
+        substitute = ChatPromptTemplate.from_template("Reformat the following query into valid JSON: {query}") | ChatOpenAI() | StrOutputParser()
+        result = substitute.invoke({str(result)})
+        try:
+            query_dict = json.loads(result)
+        except Exception as e:
+            print("YOURE DONE FOR.")
+    
+
     location = gmaps.geocode(query_dict["location"])
     
     try: 
         loc = (location[0]['geometry']['location']['lat'], location[0]['geometry']['location']['lng'])
-        # print("Location is: ", location)
     except Exception as e:
-        print("Reached error: ", e)
+        print("Reached error fetching location from GMAPS!!: ", e)
         loc = None
 
-    print("Start time: ", query_dict["start_date"])
-    print("End time", query_dict["end_date"])
-    results = mongo.search_events(start_time = datetime.fromisoformat(query_dict["start_date"]), end_time = datetime.fromisoformat(query_dict["end_date"]), coordinates = loc) # gets us a list of events
-    for result in results:
-        print("Content: ", result["event"])
-        print("\nTime: ", result["time"])
-        print("\nLocation: ", result["location"])
-        print("#"*50)
+    results = mongo.search_events(start_time = datetime.fromisoformat(query_dict["start_date"]), end_time = datetime.fromisoformat(query_dict["end_date"]), coordinates = loc) 
+    return results
+
+
+@app.post("/search")
+async def search(request: SearchRequest):
+    events = await mongo_one(request.query)
+
+    telegram_posts = []
+    for event in events:
+        for id in event["ids"]:
+            post = mongo.search_telegram_id(id)
+            if post is not None:
+                telegram_posts.append(post)
+
+    print("Telegram Posts:")
+    for post in telegram_posts:
+        print("#" * 50)
+        print(post)
+    print("#" * 50)
+
+
+
+    # # Twitter parsing
+    # final_results = []
+    # for event in results[:10]:
+    #     event["_id"] = str(event["_id"])
+    #     context  = [
+    #         f"Event details: {event['title']}",
+    #         f"Event description: {" ".join(event['context'])}"
+    #     ]
+    #     event_date = datetime.strptime(event.date, '%Y-%m-%d')
+    #     start_time = event_date - timedelta(days=1)
+    #     end_time = event_date + timedelta(days=1)
+    #     results = agent.run_search(context, start_time, end_time)
+    #     relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
+    #     summary = agent.summarize(context, relevant_tweets_list)
+    #     summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['date'], event['location'])
+    #     final_results.append(summary)
+    # print(final_results)
+
+
+    # if not final_results:
+    #     raise HTTPException(status_code=404, detail="No results found")
+    # return final_results
+
+import asyncio
+
+if __name__ == "__main__":
+
+    async def main():
+        events = await mongo_one("What has happened with Kyiv in Ukraine?")
+
+        telegram_posts = []
+        for event in events:
+            for id in event["ids"]:
+                post = mongo.search_telegram_id(id)
+                if post is not None:
+                    print("ID Found! ", id)
+                    telegram_posts.append(post)
+                else:
+                    print("ID not found: ", id)
+
+        # print("Telegram Posts:")
+        # for post in telegram_posts:
+        #     print("#" * 50)
+        #     print(post)
+        # print("#" * 50)
+    asyncio.run(main())
+
+# if __name__ == "__main__":
+    # query_to_run = query("over the past two months dk300 bombing with tanks in south russia")
+
+    # chain = ChatPromptTemplate.from_template(QUERY_PROMPT) | ChatOpenAI() | StrOutputParser()
+    # result = chain.invoke({"context": "What has happened with SP300 missles in Ukraine?", "date": datetime.now().strftime("%Y-%m-%d")})
+    # try:
+    #     query_dict = json.loads(result)
+    #     print("Valid JSON:", query_dict)
+    # except json.JSONDecodeError:
+    #     print("Invalid JSON received from chain.invoke")
+    # location = gmaps.geocode(query_dict["location"])
+    
+    # try: 
+    #     loc = (location[0]['geometry']['location']['lat'], location[0]['geometry']['location']['lng'])
+    #     # print("Location is: ", location)
+    # except Exception as e:
+    #     print("Reached error: ", e)
+    #     loc = None
+
+    # print("Start time: ", query_dict["start_date"])
+    # print("End time", query_dict["end_date"])
+    # results = mongo.search_events(start_time = datetime.fromisoformat(query_dict["start_date"]), end_time = datetime.fromisoformat(query_dict["end_date"]), coordinates = loc) # gets us a list of events
+    # for result in results:
+    #     print("Content: ", result["event"])
+    #     print("\nTime: ", result["time"])
+    #     print("\nLocation: ", result["location"])
+    #     print("#"*50)
 
     # final_results = []
     # for event in results[1:2]:

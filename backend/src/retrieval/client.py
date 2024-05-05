@@ -31,13 +31,18 @@ class MongoDBClient:
  
     def search_telegram_id(self, id: str) -> List:
         collection = self.client["telegram"]["data"]
+        collection.create_index([("id", 1)])
 
         try:
-            results = collection.find({"id": id})
+            results = collection.find({"id": id.strip()})
+            results = list(results)
+            for result in results:
+                print("Result is: ", result["event"])
+            print("#"*30)
             return results
         
         except Exception as e:
-            return []
+            return None
 
 
     # Given a query, finds relevant events. These events are all Documents, that also contain a list of ids
@@ -45,7 +50,6 @@ class MongoDBClient:
         collection = self.client["events"]["data"]
         # Create index for the time. Assuming the time is going to be held in time, and embedding in embedding.
         collection.create_index([("time", 1)])
-        # collection.create_index([("location", "2dsphere")])
         collection.create_index([("location", "2dsphere")])
 
         # Query is a dict, with the keys = to fields in each object in MongoDB
@@ -65,7 +69,6 @@ class MongoDBClient:
         # print("Query time: ", query["time"])
 
         if coordinates is not None:
-            print("Coordinates are provided!!!!!!!!!!!")
             latitude, longitude = coordinates
             # MongoDB uses a 'near' query with GeoJSON format for location data
             # We need to convert the coordinates to GeoJSON format
@@ -122,16 +125,16 @@ class MongoDBClient:
     #     return list(results)
 
 # Example usage
-if __name__ == "__main__":
-    client = MongoDBClient()
-    # results = client.test_geo_index(30, 40)
-    # for result in results:
-    #     print(result["location"])
-    start_time = "2024-03-31T00:00:00"
-    end_time = "2024-03-31T23:59:59"   
-    results = client.search_events(coordinates = (5, 5))
-    print(len(results))
-    for result in results:
-        print(result["event"], "\n", result["context"], "\nTime: ", result["time"], "\nLocation: ", result["location"])
-        print("*"*50)
+# if __name__ == "__main__":
+#     client = MongoDBClient()
+#     # results = client.test_geo_index(30, 40)
+#     # for result in results:
+#     #     print(result["location"])
+#     start_time = "2024-03-31T00:00:00"
+#     end_time = "2024-03-31T23:59:59"   
+#     results = client.search_events(coordinates = (5, 5))
+#     print(len(results))
+#     for result in results:
+#         print(result["event"], "\n", result["context"], "\nTime: ", result["time"], "\nLocation: ", result["location"])
+#         print("*"*50)
 
