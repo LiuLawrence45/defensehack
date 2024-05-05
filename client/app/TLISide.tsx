@@ -3,18 +3,52 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PanelRightClose } from "lucide-react";
-import { useState } from "react";
+import { PanelRightClose, Sparkle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ChatBubble } from "./ChatBubble";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { BarLoader } from "react-spinners";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function TLISide({ eventInfo, setSidebar }: any) {
 
     const [description, setDescription] = useState(eventInfo.description);
     const [chatValue, setChatValue] = useState('');
+    const [insights, setInsights] = useState<any>([
+            {
+                title: "Look at bridge inspections",
+                description: "Often, bridge collapses like this are caused by structural issues. Take a look at any documents for bridge inspections.",
+            }
+        ]);
 
     function onSend() {
         console.log("Sending message");
         setChatValue('');
     }
+
+    useEffect(() => {
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch('/api/insights', { signal, method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ eventId: eventInfo.id }) })
+        .then(response => response.json())
+        .then(data => {
+            setInsights(data.insights);
+        })
+        .catch(error => {
+            if (error.name === 'AbortError') {
+                console.log('Fetch aborted');
+            } else {
+                console.error('Fetch error:', error);
+            }
+        });
+
+        return () => {
+            controller.abort();
+        };
+
+    }, []);
 
     return (
         <div className="sidebar-container h-full">
@@ -43,7 +77,43 @@ export function TLISide({ eventInfo, setSidebar }: any) {
                         </div>
                     </div>
                 </TabsContent>
-
+                <TabsContent value="chats">
+                    <div className="flex flex-col flex-grow">
+                        <ScrollArea>
+                            {eventInfo.chats.map((chat: any, index: number) => (
+                                <div>
+                                    <ChatBubble key={index} message={chat.message} senderName={chat.senderName} senderImage={chat.senderPicture} attachment={chat.attachment} />
+                                </div>
+                            ))}
+                        </ScrollArea>
+                    </div>
+                </TabsContent>
+                <TabsContent value="insights">
+                    <div className="flex flex-col flex-grow h-full justify-start">
+                        
+                        {insights && (
+                            <div className="flex h-full items-center justify-start py-6">
+                                <Sparkle className="mx-2 mr-4" size={40} />
+                                {insights.map((insight: any, index: number) => (
+                                    <Card key={index}>
+                                        <CardHeader>
+                                            <CardTitle className="my-3">{insight.title}</CardTitle>
+                                            <CardDescription>{insight.description}</CardDescription>
+                                        </CardHeader>
+                                    </Card>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                    <div className="flex flex-col flex-grow h-full items-center justify-center">
+                        {!insights && (
+                            <div>
+                                <h1 className="text-xl my-3">Generating...</h1>
+                                <BarLoader />
+                            </div>
+                        )}
+                    </div>
+                </TabsContent>
             </Tabs>
         </div>
     </div>
