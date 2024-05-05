@@ -6,16 +6,23 @@ import requests
 from pymongo import MongoClient
 from dotenv import load_dotenv
 load_dotenv()
+import json
 
-# Download the CSV file
-response = requests.get(os.getenv("TELEGRAM_URL"))
-response.raise_for_status()  # This will raise an exception if there was a download error
+# UPLOADING EVENTS
+with open("backend/aggregated_events.json", "r") as f:
+    results = json.load(f)
 
-# Convert CSV data to DataFrame
-data = pd.read_csv(io.StringIO(response.text))
+results = [
+    {
+        "event": event["event"],
+        "location": event["location"],
+        "context": event["context"],
+        "time": time,
+        "ids": ids,
+    } for event, time, ids in results
+]
 
-# Convert DataFrame to JSON (list of dictionaries)
-json_data = data.to_dict(orient='records')
+
 
 # Connect to MongoDB (adjust the connection string as necessary)
 client = MongoClient(os.getenv("MONGO_URL"), tlsCAFile=certifi.where(), connectTimeoutMS=50000, socketTimeoutMS=50000)
@@ -24,7 +31,9 @@ client = MongoClient(os.getenv("MONGO_URL"), tlsCAFile=certifi.where(), connectT
 db = client['events']
 collection = db['data']
 
+print("Results is: ", results)
+
 # Insert the JSON data into MongoDB
-collection.insert_many(json_data)
+collection.insert_many(results)
 
 print("Data successfully inserted into MongoDB.")
