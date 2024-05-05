@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 from pandas import DataFrame
 from datetime import datetime, timedelta
 import json
-
+from typing import List, Document
 load_dotenv()
 
 class MongoDBClient:
@@ -26,16 +26,7 @@ class MongoDBClient:
         except Exception as e:
             print(e)
 
-    def vectorSearch(self, dbName, collectionName, index_name) -> MongoDBAtlasVectorSearch:
-        vector_search = MongoDBAtlasVectorSearch.from_connection_string(
-        os.getenv("MONGO_URL"),
-        dbName + "." + collectionName,
-        OpenAIEmbeddings(disallowed_special=()),
-        index_name=index_name
-        )
-        return vector_search
-
-    def search_telegram(self, search_field="description", search_query="", start_time=None, end_time=None) -> str:
+    def search_telegram(self, search_field="description", search_query="", start_time=None, end_time=None) -> List(Document):
         collection = self.client["telegram"]["data"]
 
         # Create index for the search field and time
@@ -67,7 +58,24 @@ class MongoDBClient:
         except Exception as e:
             print("Error occurred: ", e)
 
-        
+    # Given a query, finds relevant events. These events are all Documents, that also contain a list of ids
+    def search_events(self, query: str, start_time = None, end_time = None, top_k: int = 10) -> List(Document):
+        collection = self.client["chunked"]["data"]
+
+        # Create a vector search instance
+        vector_search = MongoDBAtlasVectorSearch.from_connection_string(
+            os.getenv("MONGO_URL"),
+            "chunked.data",
+            OpenAIEmbeddings(disallowed_special=()),
+            index_name="vector_index"
+        )
+
+        embeddings = OpenAIEmbeddings().embed_text(query)
+        results = vector_search.similarity_search(embeddings, k=top_k)
+
+        document_ids = [result['_id'] for result in results]
+        documents = collection.find({'_id': {'$in': document_ids}})
+        return list(documents)
 
 
 # Example usage

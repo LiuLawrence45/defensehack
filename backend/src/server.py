@@ -9,8 +9,6 @@ import os
 import certifi
 
 app = FastAPI()
-# mongoClient = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
-# mongo = MongoDBClient(mongoClient)
 mongo = MongoDBClient()
 
 
@@ -27,11 +25,11 @@ async def search(request: SearchRequest):
         raise HTTPException(status_code=404, detail="No results found")
     return results
 
-if __name__ == "__main__":
-    query_to_run = query("recent events dk300 bombing with tanks in south russia")
-    query_dict = query_to_run.__dict__
-    # print("Type of query_to_run:", type(query_to_run))
-    print("Query is: ", query_dict)
-    print(mongo.search_telegram(search_query = query_dict["topic"], start_time = query_dict["start_date"], end_time = query_dict["end_date"]))
+# if __name__ == "__main__":
+#     query_to_run = query("recent events dk300 bombing with tanks in south russia")
+#     query_dict = query_to_run.__dict__
+#     # print("Type of query_to_run:", type(query_to_run))
+#     print("Query is: ", query_dict)
+#     print(mongo.search_telegram(search_query = query_dict["topic"], start_time = query_dict["start_date"], end_time = query_dict["end_date"]))
 
-    # location = query_dict["location"]
+#     # location = query_dict["location"]
