@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from typing import List
 from pydantic import BaseModel
+from query import query
 
 app = FastAPI()
 
@@ -12,6 +13,10 @@ async def search(request: SearchRequest):
     # Placeholder for search logic
     # You would replace this with the actual search against your data
     # For example, using vector_search.search(query) if using a vector search engine
+    query_to_run = query(request.query)
+
+    
+
 
     if not results:
         raise HTTPException(status_code=404, detail="No results found")

@@ -1,3 +1,5 @@
+from datetime import datetime
+
 TWITTER_PROMPT = """
 Given the a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context and are specific enough (ie, choose specific unique keywords, entities, or locations). Please make sure your queries are very targeted and will return relevant results. For example, if a location is abbreviated DPR, you should search for some sort of clarifying term (ie, Ukraine DPR) instead of just JPG because JPG is too ambigious. Or, if the example is relevant to russian, you should search ("russia" + something else) instead of just russia since russia is too broad.
 
@@ -186,3 +188,45 @@ Given:
 
 Return:
 """
+
+
+QUERY_PROMPT = """
+Given a natural language query, decompose the query into a structured query object with the following fields:
+
+start_date: datetime
+end_date: datetime
+location: str
+topic: str
+
+If not start/end date is passed, return the past year. Today is {date}
+
+For example, given this query:
+
+Find everything happening in Ukraine over the past 2 days
+
+Return:
+
+start_date: 2024-02-28T00:00:00.000Z
+end_date: 2024-03-01T00:00:00.000Z
+location: Ukraine
+topic: ukraine
+
+Given this query:
+
+What has happened with SP300 missles in Ukraine?
+
+Return:
+
+start_date: 2023-05-04T00:00:00.000Z
+end_date: 2024-05-04T00:00:00.000Z
+location: Ukraine
+topic: sp300 missles
+
+Given this query:
+
+{context}
+
+Return:
+
+""".replace("date", datetime.now().strftime("%Y-%m-%d"))
+

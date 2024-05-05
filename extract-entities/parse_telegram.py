@@ -11,7 +11,8 @@ from tqdm import tqdm
 from typing import List
 from node import Node
 import csv
-from parser import Parser
+# from parser import Parser
+from parser_together import Parser
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from itertools import islice
 import pickle
@@ -44,6 +45,7 @@ def process_chunk(chunk, i, file):
 
         with open(file, "w") as f:
             json.dump(data, f)
+
     except KeyboardInterrupt:
         pickle_file = file + ".pkl"
         with open(pickle_file, "wb") as pf:
@@ -60,15 +62,15 @@ def process_chunk(chunk, i, file):
 def parse_csv(file_path: str) -> None:
     with open(file_path, newline='') as file:
         reader = csv.DictReader(file)
-        with ThreadPoolExecutor(max_workers=16) as executor:
+        with ThreadPoolExecutor(max_workers=100) as executor:
             # Split rows into chunks for each worker
-            rows = [x for x in reader][:100000]
-            n = len(rows) // 16
-            row_chunks = [rows[i * n:(i + 1) * n] for i in range(16)]
+            rows = [x for x in reader][:1000]
+            n = len(rows) // 100
+            row_chunks = [rows[i * n:(i + 1) * n] for i in range(100)]
             row_chunks[-1].extend(rows[16 * n:])  # Include any remaining rows in the last chunk
 
             # Initialize files for each worker
-            files = [f'output_worker_{i}.json' for i in range(16)]
+            files = [f'files/output_worker_{i}.json' for i in range(100)]
 
             # Submit chunks to the executor and process them
             futures = [executor.submit(process_chunk, chunk, i, files[i]) for i, chunk in enumerate(row_chunks)]
@@ -86,5 +88,5 @@ def parse_csv(file_path: str) -> None:
     #     json.dump(nodes, json_file)
 
 if __name__ == "__main__":
-    path = "datasets/telegram.csv"
+    path = "../../deftech/russia_social_media.csv"
     parse_csv(path)
