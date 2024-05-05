@@ -11,6 +11,11 @@ load_dotenv()
 class MongoDBClient:
     def __init__(self, dbname="social_media_analysis", uri=os.getenv("MONGO_URL")):
         self.client = MongoClient(uri)
+        try: 
+            client.admin.command('ping')
+            print("Pinged your deployment. You successfully connected to MongoDB!")
+        except Exception as e:
+            print(e)
         self.db = self.client[dbname]
 
     def insert_telegram_message(self, message):
@@ -31,7 +36,7 @@ class MongoDBClient:
 
 # Example usage
 if __name__ == "__main__":
-    client = MongoDBClient()
+    client = MongoDBClient(dbname = "telegram")
     client.insert_telegram_message({"user_id": "12345", "message": "Example message about an event", "date": "2023-10-01"})
     client.insert_tweet({"user_id": "67890", "text": "Tweet about the same event", "date": "2023-10-01"})
     print(client.find_telegram_messages_by_keyword("event"))

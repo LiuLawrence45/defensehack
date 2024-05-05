@@ -32,13 +32,14 @@ class Parser():
 
         events = json.loads(events)
 
-        for event in events:
-            geolocator = Nominatim(user_agent="yourmomisfataf")
-            location = geolocator.geocode(event["location"])
-            if location:
-                event["coordinates"] = (location.latitude, location.longitude)
-            else:
-                event["coordinates"] = (None, None)
-        print(events)
+        # for event in events:
+        #     geolocator = Nominatim(user_agent="yourmomisfataf")
+        #     location = geolocator.geocode(event["location"])
+        #     if location:
+        #         event["coordinates"] = (location.latitude, location.longitude)
+        #     else:
+        #         event["coordinates"] = (None, None)
+        return events
+
 
 
