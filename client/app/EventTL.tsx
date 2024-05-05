@@ -13,7 +13,17 @@ const eventInfo = {
     title: "Baltimore Bridge an hour before event",
     description: "This photo was taken by an unknown photographer on Telegram about an hour before the bridge collapsed.",
     date: "Mar. 26, 2024 - 4:05PM",
+    chats: [
+        {
+            "senderName": "Joe",
+            "message": "Beautiful day, took some flicks of the bridge.",
+            "attachment": Bridge.src,
+            "senderPicture": "https://placehold.co/200x100"
+        }
+    ]
 };
+
+const events = [eventInfo, eventInfo, eventInfo, eventInfo, eventInfo, eventInfo];
 
 export function EventTL({ searchTerm, setSidebar }: any) {
 
@@ -33,7 +43,7 @@ export function EventTL({ searchTerm, setSidebar }: any) {
         }, 5000);
         let t2 = setTimeout(() => {
             setLoaded(true);
-        }, 8000);
+        }, 0);
 
         return () => {
             clearTimeout(t1);
@@ -86,12 +96,11 @@ export function EventTL({ searchTerm, setSidebar }: any) {
     let timeline = (
     <div className="h-full flex flex-col justify-center">
       <Timeline position="alternate">
+    
+      {events.map((eventInfo, index) => {
+        return <TLI key={index} eventInfo={eventInfo} setSidebar={setSidebar} />
+      })}
       
-      <TLI eventInfo={eventInfo} setSidebar={setSidebar} />
-      <TLI eventInfo={eventInfo} setSidebar={setSidebar} />
-      <TLI eventInfo={eventInfo} setSidebar={setSidebar} />
-      <TLI eventInfo={eventInfo} setSidebar={setSidebar} />
-      <TLI eventInfo={eventInfo} setSidebar={setSidebar} />
       <p className="text-center text-gray-400">Now</p>
       
     </Timeline>
