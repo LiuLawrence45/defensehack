@@ -43,7 +43,7 @@ class MongoDBClient:
 
 
     # Given a query, finds relevant events. These events are all Documents, that also contain a list of ids
-    def search_events(self, query: str, start_time = None, end_time = None, top_k: int = 10) -> List:
+    def search_events(self, search_query: str, start_time = None, end_time = None, top_k: int = 10) -> List:
         collection = self.client["chunked"]["data"]
         # Create index for the time. Assuming the time is going to be held in time, and embedding in embedding.
         collection.create_index([("embedding", 1), ("time", 1)])
@@ -51,14 +51,10 @@ class MongoDBClient:
         # Query is a dict, with the keys = to fields in each object in MongoDB
         query = {}
 
-        # If a search query is provided, add as a key.
-        if query:
-            query[search_field] = query
-
         # # If time range is not provided, default to the past two weeks
         if not start_time or not end_time:
             end_time = datetime.now()
-            start_time = end_time - timedelta(weeks=2)
+            start_time = end_time - timedelta(weeks=1)
 
 
         query["time"] = {"$gte": start_time, "$lte": end_time}

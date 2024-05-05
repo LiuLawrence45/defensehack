@@ -30,8 +30,6 @@ async def search(request: SearchRequest):
         context  = [
             f"Event details: {event['title']}",
             f"Event description: {" ".join(event['context'])}"
-            # "Event details: An assault group of fagots was destroyed in the village of #Pervomaiskoye, through the lens of the operator of the 11th separate motorized infantry battalion “Kievan Rus”🔥💥💪🇺🇦",
-            # # "Event description: ​🇷🇺⚡️Limansky and Seversky directions, situation at 13:00 March 31, 2024 On the Limansky direction at the turn of Terny - Yampolovka there are oncoming battles. The RF Armed Forces and the Ukrainian Armed Forces are trying to knock each other out of their positions. Units of the Russian Army have not yet managed to build on their success and enter the village of Terny."
         ]
         event_date = datetime.strptime(event.date, '%Y-%m-%d')
         start_time = event_date - timedelta(days=1)
