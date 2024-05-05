@@ -3,7 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 ENTITY_PROMPT = """
                                                  
 
-Given content, extract all notable events mentioned. Return in a dictionary format as such:
+Given content, extract all notable events mentioned. RETURN ONLY VALID JSON, NOTHING ELSE. DO NOT RETURN ANY OTHER TEXT. Return in a dictionary format as such:
 
 [
     {{
@@ -18,6 +18,7 @@ Given content, extract all notable events mentioned. Return in a dictionary form
         "location": "location_of_event"
                                                  
     }}
+]
 
     Make sure that the location of the event is formatted so it is findable by GeoPy (python). The descriptions should be related to and aid any military intelligence efforts. AGAIN, THESE DESCRIPTIONS SHOULD AID ANY MILITARY INTELLIGENCE EFFORTS. And further, make sure the output is valid json.
     Below are some examples: 
@@ -135,4 +136,6 @@ Output: "[
 
 Here is the input: {content}
 
-]"""
+Output:
+
+"""
