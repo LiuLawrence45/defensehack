@@ -22,7 +22,7 @@ class TwitterSearchClient:
             self.client.login(auth_info_1=self.username, auth_info_2=self.email, password=self.password)
             self.client.save_cookies(cookies_path)
 
-    def search(self, start_datetime, end_datetime, query, num_tweets=20):
+    def search(self, start_datetime, end_datetime, query, num_tweets=10):
         if not isinstance(start_datetime, datetime) or not isinstance(end_datetime, datetime):
             raise ValueError("start_datetime and end_datetime must be datetime objects")
         formatted_start_date = start_datetime.strftime('%Y-%m-%d')

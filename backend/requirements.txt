@@ -4,3 +4,6 @@ langchain-openai
 scikit-learn
 fastapi
 googlemaps
+langchain-mongodb
+pandas
+motor
