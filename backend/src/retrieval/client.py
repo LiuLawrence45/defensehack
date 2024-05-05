@@ -34,13 +34,9 @@ class MongoDBClient:
 
         try:
             results = collection.find({"id": id})
-            # ids = [result["_id"] for result in results]  
-            # print("Document IDs: ", ids)
-            # print("Results are: ", results)
             return results
         
         except Exception as e:
-            # print("Error occurred: ", e)
             return []
 
 
@@ -62,7 +58,7 @@ class MongoDBClient:
 
         if not start_time or not end_time:
             end_time = datetime.now().replace(microsecond=0).isoformat()
-            start_time = (datetime.now() - timedelta(weeks=1)).replace(microsecond=0).isoformat()
+            start_time = (datetime.now() - timedelta(weeks=5)).replace(microsecond=0).isoformat()
 
         query["time"] = {"$gte": start_time, "$lte": end_time}
 
@@ -105,14 +101,34 @@ class MongoDBClient:
         # documents = collection.find({'_id': {'$in': document_ids}})
         # return list(documents)
 
+    # def test_geo_index(self, latitude: float, longitude: float):
+    #     collection = self.client["events"]["data"]
+    #     geo_json_location = {
+    #         "type": "Point",
+    #         "coordinates": [longitude, latitude]
+    #     }
+    #     query = {
+    #         "location": {
+    #             "$nearSphere": {
+    #                 "$geometry": geo_json_location,
+    #                 "$maxDistance": 100000000000  # Adjust distance in meters
+    #             }
+    #         }
+    #     }
+    #     results = collection.find(query)
+    #     return list(results)
+
 # Example usage
 if __name__ == "__main__":
     client = MongoDBClient()
+    # results = client.test_geo_index(30, 40)
+    # for result in results:
+    #     print(result["location"])
     start_time = "2024-03-31T00:00:00"
     end_time = "2024-03-31T23:59:59"   
-    results = client.search_events(start_time = start_time, end_time = end_time)
+    results = client.search_events(coordinates = (5, 5))
     print(len(results))
-    # for result in results:
-    #     print(result["event"], "\n", result["context"], "\nTime: ", result["time"], "\nLocation: ", result["location"])
-    #     print("*"*50)
+    for result in results:
+        print(result["event"], "\n", result["context"], "\nTime: ", result["time"], "\nLocation: ", result["location"])
+        print("*"*50)
 
