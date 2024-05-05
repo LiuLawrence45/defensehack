@@ -1,7 +1,7 @@
 TWITTER_PROMPT = """
 Given the a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context and are specific enough (ie, choose specific unique keywords, entities, or locations). Please make sure your queries are very targeted and will return relevant results. For example, if a location is abbreviated DPR, you should search for some sort of clarifying term (ie, Ukraine DPR) instead of just JPG because JPG is too ambigious. Or, if the example is relevant to russian, you should search ("russia" + something else) instead of just russia since russia is too broad.
 
-Use the context and the description to disambiguate locations when possible. For example, in the context of ukraine, DPR refers to Donetsk People's republic (though you may want to just query Donetsk)
+Use the context and the description to disambiguate locations when possible. For example, in the context of ukraine, DPR refers to Donetsk People's republic (though you may want to just query Donetsk). However, also make sure you are not too specific, for example, if referring to a specific type of hardware or device, use the general term (ie, S300 instead of S300PS).
 
 For example:
 
@@ -98,7 +98,7 @@ Output:
 """
 
 SUMMARIZE = """
-Given a list of text data related to the following event, generate a summary of the event in a bullet point format.
+Given a list of text data related to the following event, generate a summary of the event in a bullet point format. Be as specific as possible. When there is conflicting information, use the event information first, and then the context. If there is conflicting information in the context, use the one that is mentioned the most amount of times. Try to include any important/relevant information found in the context, such as numbers, make/models of weapons, etc. Also include any tangential information provided, such as other areas/things impacted, other parts of impacted, extent, 
 
 For example, given the following event:
 
@@ -121,6 +121,34 @@ Ukraine forces shell residential areas of DPR
 - 3 civilians wounded in DPR
 - 13 155-mm shells launched at Gorlovka and Donetsk
 - Investigators are investigating civilian injuries
+
+Given the following event:
+
+Event details: Destruction of Radar and S-300 Launcher near Zmiev
+Event descriptionL: The 40V6M universal tower with the 30N6 illumination and guidance radar, as well as the S-300PS air defense missile launcher of the Ukrainian army near the city of Zmiev in the Kharkov region, were destroyed. The footage captured the impact of an air-detonated missile on the tower and the subsequent detonation of solid fuel in the missile launcher
+
+Context:
+
+Generate the following output:
+The destruction of the S300 south of Kharkov already paying dividends
+Ukrainian supporters like NAFO will say this Iskander hit a "Decoy" or some other dumb shit. However, this is a full S300 Air defense  battery, including its radar.  #Ukraine #Russia  #Iskander #UkraineWar #UkraineWarNews #UkraineRussiaWar #NAFOfellas #UkraineFrontLines #Zelensky https://t.co/nflB7KNt8q
+Destruction of a crucial Ukrainian S300 radar tower and launcher  The radar was already on fire when this Tornado-S missile hit https://t.co/rTQbvAgDx1
+@MrClarkyofAxel @WarVehicle @DrazaM33 this one had ammunition given the explosion. In addition, these systems are relatively effective against Kh-101 type cruise missiles. This is a loss that Ukraine will not be able to replace.
+Russian strike on a TEL and 30N6 engagement radar on a 40V6M mast, part of a Ukrainian S-300PS air defense system. Near Kostyantivka, Kharkiv Oblast, around 56 km from the border.  https://t.co/BaZMOe3JDF https://t.co/kEWIhQO3zL
+#UkraineRussiaWar #Sevastopol #Avdeevka #Robotyne #Bakhmut   🇷🇺 Video of the defeat of the S-300PS under Zmiev by two operational-tactical quasi-ballistic missiles 9M723-1 of the Iskander-M complex.   The 30N6 illumination radar located on the 40V6M universal tower, designed to… https://t.co/0P5yVs8A8f
+According to the Ministry of Defense, three Su-25 aircraft of the Ukrowehrmacht were destroyed at the Voznesensk airport in the Nikolaev region. In addition, a 40V6M illumination and guidance radar, a combat vehicle, a low-altitude detector and 3 S-300 air defense launchers were destroyed https://t.co/BZndzsBEhB
+@squatsons &gt; Neither, in fact it was an S-300 and a 40V6M tower with 30N6 illumination radar.  All 3 were taking out in a single day.  1 S-300 was hit in one location in Kharkov.  1 Patriot hit in another location in Kharkov  1 NASAMS hit in another location in Kharkov.
+#UkraineRussiaWar #Sevastopol #Avdeevka #Robotyne #Bakhmut   🇷🇺 Video of the defeat of the S-300PS under Zmiev by two operational-tactical quasi-ballistic missiles 9M723-1 of the Iskander-M complex.   The 30N6 illumination radar located on the 40V6M universal tower, designed to… https://t.co/0P5yVs8A8f
+
+Generate the following output:
+
+Russian forces destroy Ukrainian radar and S-300 launcher near Zmiev, Kharkov region
+- 40V6M universal tower with 30N6 illumination and guidance radar destroyed
+- 1 to 3 S-300 missle launchers were destroyed, and 1 Patriot and 1 NASAMS were affected
+- Attack carried out with air-detonating missiles, either Iskander or Tornado-S
+- Radar was located at coordinates 49.72241181360301, 36.36809829269529 near Kostyantsivka, about 56 km from Russian border
+- Ukrainian personnel manning the equipment also killed in strike
+- Loss of S-300 system will impact Ukraine's ability to defend against Russian cruise missiles like Kh-101
 
 Given the following event:
 
