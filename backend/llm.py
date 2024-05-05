@@ -38,8 +38,8 @@ class LLM:
 
         model = self.client
         chain = prompt_template | model | output_parser
-
-        return chain.invoke({"prompt": prompt})
+        result = chain.invoke({"prompt": prompt})
+        return chain.invoke(result.json())
     
 
     def embed(self, text):

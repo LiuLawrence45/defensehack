@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={raleway.className}>{children}</body>
+    <html lang="en" className="h-full">
+      <body className={`${raleway.className} h-full`}>{children}</body>
     </html>
   );
 }

@@ -4,15 +4,19 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 load_dotenv()
 
-def get_database(db):
+def get_database():
     """ Connect to MongoDB and return a database instance. """
     # Connection URL
     client = MongoClient(os.getenv("MONGO_URL"))
     # If your MongoDB server requires authentication, connect as follows:
     # client = MongoClient('mongodb://username:password@localhost:27017/')
 
-    # Create a database named 'social_media_analysis'
-    return client[db]
+    try: 
+        client.admin.command('ping')
+        print("Pinged your deployment. You successfully connected to MongoDB!")
+    except Exception as e:
+        print(e)
+    # return client[db]
 
 def setup_collections(db):
     """ Define indexes and any other collection settings here. """
@@ -28,4 +32,4 @@ def setup_collections(db):
 
 if __name__ == "__main__":
     db = get_database()
-    setup_collections(db)
+    # setup_collections(db)
