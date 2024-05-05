@@ -25,7 +25,7 @@ async def search(request: SearchRequest):
     query_dict = query_to_run.__dict__
     results = mongo.search_telegram(search_query = query_dict["topic"], start_time = query_dict["start_date"], end_time = query_dict["end_date"]) # gets us a list of events
     final_results = []
-    for event in results:
+    for event in results[:10]:
         event["_id"] = str(event["_id"])
         context  = [
             f"Event details: {event['title']}",
@@ -39,10 +39,10 @@ async def search(request: SearchRequest):
         summary = agent.summarize(context, relevant_tweets_list)
         summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['date'], event['location'])
         final_results.append(summary)
-
-    if not results:
+    print(final_results)
+    if not final_results:
         raise HTTPException(status_code=404, detail="No results found")
-    return results
+    return final_results
 
 if __name__ == "__main__":
     query_to_run = query("recent events dk300 bombing with tanks in south russia")
