@@ -25,7 +25,7 @@ class Cluster:
                     clustered[i].append(j)
                     used_js.add(j)
         
-        self.cluster = clustered
+        self.clustered = clustered
     
     def get_clusters(self):
         text_data = self.og_data
@@ -36,6 +36,7 @@ class Cluster:
                 data.append(text_data[index])
                 for similar_index in similar_indices:
                     data.append(text_data[similar_index])
+            list_of_entries.append(data)
         
         return list_of_entries
 

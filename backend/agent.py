@@ -93,4 +93,5 @@ class Agent:
             context: List[str] = Field(..., description="The context of the event.")
         
         event_result = self.llm.predict_structured(event_prompt, schema=EventLocationResult)
+        print(event_result)
         return event_result
