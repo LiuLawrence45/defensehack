@@ -23,7 +23,7 @@ results = [
     } for event, time, ids in results
 ]
 
-
+print(results[0])
 
 # Connect to MongoDB (adjust the connection string as necessary)
 client = MongoClient(os.getenv("MONGO_URL"), tlsCAFile=certifi.where(), connectTimeoutMS=50000, socketTimeoutMS=50000)
