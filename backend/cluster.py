@@ -32,7 +32,7 @@ class Cluster:
         list_of_entries = []
         for index, similar_indices in self.clustered.items():
             data = []
-            if len(similar_indices) > 2:
+            if len(similar_indices) > 1:
                 data.append(text_data[index])
                 for similar_index in similar_indices:
                     data.append(text_data[similar_index])
