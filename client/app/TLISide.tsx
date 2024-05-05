@@ -10,16 +10,36 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { BarLoader } from "react-spinners";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
+const BASE_URL = "https://vl-nat-sec-hackathon-may-2024.s3.us-east-2.amazonaws.com";
+
+function getChats(telegram: any, twitter: any) {
+    let res = [];
+    for (let t of telegram) {
+        res.push({
+            message: t.translation,
+            senderName: t.name,
+            senderPicture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/680px-Default_pfp.svg.png',
+            attachment: BASE_URL + "/" + t.attachment_urls.split(',')[0]
+        });
+    }
+    for (let t of twitter) {
+        res.push({
+            message: "",
+            senderName: "",
+            senderPicture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/680px-Default_pfp.svg.png',
+            attachment: t
+        });
+    }
+    return res;
+}
+
 export function TLISide({ eventInfo, setSidebar }: any) {
 
     const [description, setDescription] = useState(eventInfo.description);
     const [chatValue, setChatValue] = useState('');
-    const [insights, setInsights] = useState<any>([
-            {
-                title: "Look at bridge inspections",
-                description: "Often, bridge collapses like this are caused by structural issues. Take a look at any documents for bridge inspections.",
-            }
-        ]);
+    const [insights, setInsights] = useState<any>([]);
+
+    eventInfo.chats = getChats(eventInfo.telegram_posts, eventInfo.twitter_posts[0][1]);
 
     function onSend() {
         console.log("Sending message");
@@ -31,10 +51,11 @@ export function TLISide({ eventInfo, setSidebar }: any) {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    fetch('/api/insights', { signal, method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ eventId: eventInfo.id }) })
+    fetch('http://10.1.60.171:8080/insights?id=' + eventInfo._id, { signal, method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: eventInfo._id }) })
         .then(response => response.json())
         .then(data => {
-            setInsights(data.insights);
+            setInsights(JSON.parse(data.insights));
+            console.log(data);
         })
         .catch(error => {
             if (error.name === 'AbortError') {
@@ -62,8 +83,8 @@ export function TLISide({ eventInfo, setSidebar }: any) {
                 </TabsList>
                 <TabsContent value="event" className="items-end">
                     <div className="flex flex-col overflow-auto flex-grow">
-                        <h1 className="text-xl text-center my-5 font-semibold">{eventInfo.title}</h1>
-                        <img src={eventInfo.image} alt="Baltimore Bridge" className="mx-auto p-3" style={{ maxHeight: '200px', flexShrink: 0 }} />
+                        <h1 className="text-xl text-center my-5 font-semibold">{eventInfo.event}</h1>
+                        <img src={eventInfo.image} className="mx-auto p-3" style={{ maxHeight: '200px', flexShrink: 0 }} />
                         <p className="text-center my-5 mx-10">{description}</p>
                     </div>
                     <div className="flex flex-col">
@@ -81,7 +102,7 @@ export function TLISide({ eventInfo, setSidebar }: any) {
                     <div className="flex flex-col flex-grow">
                         <ScrollArea>
                             {eventInfo.chats.map((chat: any, index: number) => (
-                                <div>
+                                <div key={index}>
                                     <ChatBubble key={index} message={chat.message} senderName={chat.senderName} senderImage={chat.senderPicture} attachment={chat.attachment} />
                                 </div>
                             ))}
@@ -89,21 +110,27 @@ export function TLISide({ eventInfo, setSidebar }: any) {
                     </div>
                 </TabsContent>
                 <TabsContent value="insights">
+
+                    {insights.length === 0 && (
+                        <BarLoader className="mx-auto" />
+                    )}
                     <div className="flex flex-col flex-grow h-full justify-start">
-                        
-                        {insights && (
-                            <div className="flex h-full items-center justify-start py-6">
-                                <Sparkle className="mx-2 mr-4" size={40} />
-                                {insights.map((insight: any, index: number) => (
-                                    <Card key={index}>
+
+                    {insights && (
+                        <div className="flex h-full flex-col items-start justify-start py-6">
+                            {insights.map((insight: any, index: number) => (
+                                <div key={index} className="flex items-center">
+                                    <Sparkle className="mx-2 mr-4" size={40} />
+                                    <Card>
                                         <CardHeader>
-                                            <CardTitle className="my-3">{insight.title}</CardTitle>
-                                            <CardDescription>{insight.description}</CardDescription>
+                                            <CardDescription className="my-3">{insight}</CardDescription>
                                         </CardHeader>
                                     </Card>
-                                ))}
-                            </div>
-                        )}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
                     </div>
                     <div className="flex flex-col flex-grow h-full items-center justify-center">
                         {!insights && (

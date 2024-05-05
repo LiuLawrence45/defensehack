@@ -8,7 +8,7 @@ export function ChatBubble({ message, senderName, senderImage, attachment }: any
                 <span className="sender-name">{senderName}</span>
                 <br />
                 {attachment && (
-                    <img src={attachment} alt="Attachment" className="w-1/2 mx-auto" />
+                    <img src={attachment} className="w-1/2 mx-auto" />
                 )}
             </div>
             <p className="message-text">{message}</p>

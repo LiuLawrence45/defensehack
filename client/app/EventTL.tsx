@@ -24,32 +24,70 @@ const eventInfo = {
 };
 
 const events = [eventInfo, eventInfo, eventInfo, eventInfo, eventInfo, eventInfo];
+const BASE_URL = "https://vl-nat-sec-hackathon-may-2024.s3.us-east-2.amazonaws.com";
 
 export function EventTL({ searchTerm, setSidebar }: any) {
 
     const [loaded, setLoaded] = useState(false);
+    const [events, setEvents] = useState([]);
     const globeRef = useRef<any>(null);
     const [targetCoords, setTargetCoords] = useState<any>(null);
 
     useEffect(() => {
-        console.log('search term changed');
-        setLoaded(false);
-        let t1 = setTimeout(() => {
+        const abortController = new AbortController(); // Create an instance of AbortController
+        const signal = abortController.signal; // Obtain the signal to pass to fetch
+
+        fetch('http://10.1.60.171:8080/search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: searchTerm }),
+            signal: signal // Pass the abort signal to fetch
+        })
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+            console.log(data);
             setTargetCoords({
-                lat: 39.290383,
-                lng: -76.612189,
+                lat: data[0].location.coordinates[1],
+                lng: data[0].location.coordinates[0],
                 altitude: 0.1
             });
-        }, 5000);
-        let t2 = setTimeout(() => {
-            setLoaded(true);
-        }, 0);
+            data.sort((a: any, b: any) => {
+                if (a.time < b.time) return -1;
+                if (a.time > b.time) return 1;
+                return 0;
+            });
+            for (let event of data) {
+                for (let chat of event.telegram_posts) {
+                    if (chat.attachment_urls) {
+                        event.image = BASE_URL + '/' + chat.attachment_urls.split(',')[0];
+                        break;
+                    }
+                }
+                if (!event.image && event.twitter_posts[0][1].length > 0) {
+                    event.image = event.twitter_posts[0][1][0];
+                }
+                event.description = event.twitter_posts[0][0];
+            }
+            setTimeout(() => {
+                setEvents(data);
+                setLoaded(true);
+            }, 3000);
+        })
+        .catch(error => {
+            if (error.name !== 'AbortError') {
+                console.error("Fetch error: ", error);
+            }
+        });
+
+        setLoaded(false);
 
         return () => {
-            clearTimeout(t1);
-            clearTimeout(t2);
-        }
-    }, [searchTerm]);
+            abortController.abort(); // Cleanup function that aborts the fetch operation
+        };
+    }, [searchTerm]); 
 
     useEffect(() => {
 
@@ -79,6 +117,8 @@ export function EventTL({ searchTerm, setSidebar }: any) {
 
     }, [loaded, targetCoords]);
 
+    console.log(events);
+
     let loading = (
         <div className="w-full flex justify-center">
             <BarLoader className="absolute" />
@@ -97,8 +137,8 @@ export function EventTL({ searchTerm, setSidebar }: any) {
     <div className="h-full flex flex-col justify-center">
       <Timeline position="alternate">
     
-      {events.map((eventInfo, index) => {
-        return <TLI key={index} eventInfo={eventInfo} setSidebar={setSidebar} />
+      {events.map((event, index) => {
+        return <TLI key={index} eventInfo={event} setSidebar={setSidebar} />
       })}
       
       <p className="text-center text-gray-400">Now</p>
@@ -107,6 +147,5 @@ export function EventTL({ searchTerm, setSidebar }: any) {
     </div>
     );
 
-    console.log(loaded);
     return loaded ? timeline : loading;
 }

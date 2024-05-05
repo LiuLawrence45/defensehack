@@ -20,11 +20,11 @@ export function TLI({ setSidebar, eventInfo }: any) {
         <TimelineContent>
             <Card className="bg-gray-50 flex items-center cp" onClick={clickOnCard}>
                 <CardHeader>
-                    <CardTitle>{eventInfo.title}</CardTitle>
-                    <CardDescription>{eventInfo.date}</CardDescription>
+                    <CardTitle className="text-l">{eventInfo.event}</CardTitle>
+                    <CardDescription>{new Date(eventInfo.time).toLocaleDateString('en-US')}</CardDescription>
                 </CardHeader>
                 <CardContent className="h-full p-0">
-                    <img src={eventInfo.image} width={300} alt="Baltimore Bridge" className="my-auto" />
+                    <img src={eventInfo.image} width={300} alt="" className="my-auto" />
                 </CardContent>
             </Card>
         </TimelineContent>
