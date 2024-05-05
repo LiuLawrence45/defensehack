@@ -231,3 +231,15 @@ Return:
 
 """.replace("date", datetime.now().strftime("%Y-%m-%d"))
 
+
+PROMPT_REASONING = """
+
+Given the following list of events:
+
+{context}
+
+Analyze potential correlations between the different events. Output your response as direct, concise, but insightful bulletpoints.
+
+Output:
+
+"""
