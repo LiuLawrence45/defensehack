@@ -8,7 +8,7 @@ from src.retrieval.client import MongoDBClient
 import motor.motor_asyncio
 import os
 import certifi
-
+ 
 app = FastAPI()
 # mongoClient = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
 # mongo = MongoDBClient(mongoClient)
