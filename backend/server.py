@@ -12,6 +12,11 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain_openai import ChatOpenAI
 import json
+import hashlib
+import pickle
+import time
+import random
+
 from datetime import datetime
  
 app = FastAPI()
@@ -107,8 +112,17 @@ async def mongo_one(query) -> List:
 @app.post("/search")
 async def search(request: SearchRequest):
     events = await mongo_one(request.query)
-    for event in tqdm(events):
+
+    # Calculate the MD5 hash of the query string
+    query_hash = hashlib.md5(request.query.encode('utf-8')).hexdigest()
+    print(f"MD5 hash of the query: {query_hash}")
+    from concurrent.futures import ThreadPoolExecutor
+
+
+    def process_event(event):
+        time.sleep(random.randint(1, 3))
         event['telegram_posts'] = []
+        event.pop('embedding', None)
 
         # Add telegram logs
         for id in event["ids"]:
@@ -118,22 +132,76 @@ async def search(request: SearchRequest):
 
         event['twitter_posts'] = []
         # Add twitter posts
-        context  = [
+        context = [
             f"Event details: {event['event']}",
-            f"Event description: {" ".join(event['context'])}"
+            f"Event description: {' '.join(event['context'])}"
         ]
         event_date = datetime.fromisoformat(event['time'])
         start_time = event_date - timedelta(days=1)
         end_time = event_date + timedelta(days=1)
-        results = agent.run_search(context, start_time, end_time)
-        relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
+        try:
+            results = agent.run_search(context, start_time, end_time)
+            relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
+        except Exception as e:
+            print("Error while fetching relevant tweets: ", e)
+            relevant_tweets_list = []
         summary = agent.summarize(context, relevant_tweets_list)
         summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['time'], event['location'])
         event['twitter_posts'].append(summary)
+        print(event)
+        return event
+
+    cache_file = f'cache/{query_hash}.pkl'
+    if os.path.exists(cache_file):
+        with open(cache_file, 'rb') as f:
+            results = pickle.load(f)
+    else:
+        with ThreadPoolExecutor() as executor:
+            events_to_process = events[:4]
+            results = list(tqdm(executor.map(process_event, events_to_process), total=len(events_to_process)))
+        with open(cache_file, 'wb') as f:
+            pickle.dump(results, f)
+
+    for result in results:
+        result["_id"] = str(result["_id"])
+        for event in result["telegram_posts"]:
+            event["_id"] = str(event["_id"])
+        # print(result)
+
+    return results
 
         
 
+from bson import ObjectId
+from langchain.prompts import ChatPromptTemplate
+from langchain.schema.output_parser import StrOutputParser
+from langchain_openai import ChatOpenAI
+@app.post("/insights")
+async def insights(id):
 
+    # Convert the provided id to an ObjectId
+    object_id = ObjectId(id)
+
+    # Fetch the event data from the MongoDB collection
+    event_data = mongo.db['events'].find_one({"_id": object_id})
+
+    if not event_data:
+        raise HTTPException(status_code=404, detail="Event not found")
+
+    # Extract the context from the event data
+    context = "\n".join(event_data.get('context', []))
+
+
+    if not context:
+        raise HTTPException(status_code=404, detail="No context available for insights generation")
+
+    PROMPT = ChatPromptTemplate.from_template("From the following facts, generate very meaningful insights that a command officer or intel officer could use. Pretend you are sherlock holmes and you are trying to optimize the safety of the united states. Each insight should be an element in an array. You will return an array formatted like this. [insight 1, insight 2, insight 3]. Remember this format. These insights should be pretty long paragraphs. Here is the context: {context}")
+    # Use the context to generate insights using GPT
+    insights = PROMPT | ChatOpenAI() | StrOutputParser()
+
+    result = insights.invoke({"context": context})
+
+    return {"insights": result}
 
 
     # # Twitter parsing
@@ -162,93 +230,73 @@ async def search(request: SearchRequest):
 import asyncio
 from tqdm import tqdm
 
+
+# # Main for creating caches
+import uvicorn
+
 if __name__ == "__main__":
-
-    async def main():
-        events = await mongo_one("over the past two months dk300 bombing with tanks in south russia")
-        for i, event in enumerate(tqdm(events)):
-            event.pop("embedding", None)
-            event['telegram_posts'] = []
-
-            # Add telegram logs
-            for id in event["ids"]:
-                post = mongo.search_telegram_id(id)
-                if post is not None:
-                    post.pop("body", None)
-                    event['telegram_posts'].append(post)
-
-            event['twitter_posts'] = []
+    uvicorn.run("server:app", host="0.0.0.0", port=8080, reload=True)
 
 
-            # Add twitter posts
-            # if (len(event['telegram_posts']) > 2 and i < 10):
-            #     context  = [
-            #         f"Event details: {event['event']}",
-            #         f"Event description: {" ".join(event['context'])}"
-            #     ]
-            #     event_date = datetime.fromisoformat(event['time'])
-            #     start_time = event_date - timedelta(days=1)
-            #     end_time = event_date + timedelta(days=1)
-            #     results = agent.run_search(context, start_time, end_time)
-            #     relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
-            #     summary = agent.summarize(context, relevant_tweets_list)
-            #     summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['time'], event['location'])
-            #     event['twitter_posts'].append(summary)
+#     async def main():
+#         events = await mongo_one("over the past two months dk300 bombing with tanks in south russia")
+#         for i, event in enumerate(tqdm(events)):
+#             event.pop("embedding", None)
+#             event['telegram_posts'] = []
 
-        with open("results/CACHE_1_nontwitter.json", "w") as f:
-            json.dump(events, f, default=str, indent = 4)
-            print("SAVED!@!!")
+#             # Add telegram logs
+#             for id in event["ids"]:
+#                 post = mongo.search_telegram_id(id)
+#                 if post is not None:
+#                     post.pop("body", None)
+#                     event['telegram_posts'].append(post)
 
-    asyncio.run(main())
+#             event['twitter_posts'] = []
 
-# if __name__ == "__main__":
-    # query_to_run = query("over the past two months dk300 bombing with tanks in south russia")
 
-    # chain = ChatPromptTemplate.from_template(QUERY_PROMPT) | ChatOpenAI() | StrOutputParser()
-    # result = chain.invoke({"context": "What has happened with SP300 missles in Ukraine?", "date": datetime.now().strftime("%Y-%m-%d")})
-    # try:
-    #     query_dict = json.loads(result)
-    #     print("Valid JSON:", query_dict)
-    # except json.JSONDecodeError:
-    #     print("Invalid JSON received from chain.invoke")
-    # location = gmaps.geocode(query_dict["location"])
-    
-    # try: 
-    #     loc = (location[0]['geometry']['location']['lat'], location[0]['geometry']['location']['lng'])
-    #     # print("Location is: ", location)
-    # except Exception as e:
-    #     print("Reached error: ", e)
-    #     loc = None
+#             # Add twitter posts
+#             # if (len(event['telegram_posts']) > 2 and i < 10):
+#             #     context  = [
+#             #         f"Event details: {event['event']}",
+#             #         f"Event description: {" ".join(event['context'])}"
+#             #     ]
+#             #     event_date = datetime.fromisoformat(event['time'])
+#             #     start_time = event_date - timedelta(days=1)
+#             #     end_time = event_date + timedelta(days=1)
+#             #     results = agent.run_search(context, start_time, end_time)
+#             #     relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
+#             #     summary = agent.summarize(context, relevant_tweets_list)
+#             #     summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['time'], event['location'])
+#             #     event['twitter_posts'].append(summary)
 
-    # print("Start time: ", query_dict["start_date"])
-    # print("End time", query_dict["end_date"])
-    # results = mongo.search_events(start_time = datetime.fromisoformat(query_dict["start_date"]), end_time = datetime.fromisoformat(query_dict["end_date"]), coordinates = loc) # gets us a list of events
-    # for result in results:
-    #     print("Content: ", result["event"])
-    #     print("\nTime: ", result["time"])
-    #     print("\nLocation: ", result["location"])
-    #     print("#"*50)
+#         with open("results/CACHE_1_nontwitter.json", "w") as f:
+#             json.dump(events, f, default=str, indent = 4)
+#             print("SAVED!@!!")
 
-    # final_results = []
-    # for event in results[1:2]:
-    #     event["_id"] = str(event["_id"])
-    #     context  = [
-    #         f"Event details: {event['event']}",
-    #         f"Event description: {" ".join(event['context'])}"
-    #     ]
-    #     event_date = datetime.fromisoformat(event['time'])
-    #     start_time = (event_date - timedelta(days=1))
-    #     end_time = event_date + timedelta(days=1)
-    #     results = agent.run_search(context, start_time, end_time)
-    #     relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
-    #     summary = agent.summarize(context, relevant_tweets_list)
-    #     summary = (summary[0], [x['media_url_https'] for x in summary[1]], event['time'], event['location'])
-    #     final_results.append(summary)
+#     asyncio.run(main())
 
-    # print(final_results)
 
-    # for result in results:
-    #     print(result.keys())
-    #     print("*"*50)
+# # if __name__ == "__main__":
+# #     id = "66378096b1b563eb4d670d5c"
+# #     object_id = ObjectId(id)
 
-    # location = query_dict["location"]
+# #     # Fetch the event data from the MongoDB collection
+# #     event_data = mongo['events']['data'].find_one({"_id": object_id})
+
+# #     if not event_data:
+# #         raise HTTPException(status_code=404, detail="Event not found")
+
+# #     # Extract the context from the event data
+# #     context = "\n".join(event_data.get('context', []))
+
+
+# #     if not context:
+# #         raise HTTPException(status_code=404, detail="No context available for insights generation")
+
+# #     PROMPT = ChatPromptTemplate.from_template("From the following facts, generate very meaningful insights that a command officer or intel officer could use. Pretend you are sherlock holmes and you are trying to optimize the safety of the united states. Each insight should be an element in an array. You will return an array formatted like this. [insight 1, insight 2, insight 3]. Remember this format. These insights should be pretty long paragraphs. Here is the context: {context}")
+# #     # Use the context to generate insights using GPT
+# #     insights = PROMPT | ChatOpenAI() | StrOutputParser()
+
+# #     result = insights.invoke({"context": context})
+
+# #     print({"insights": result})
