@@ -86,6 +86,11 @@ class Agent:
     def extract_event(self, context: List):
         context_joined = "\n".join(context)
         event_prompt = EXTRACT_EVENT.format(context=context_joined)
-        print(event_prompt)
-        event_result = self.llm.predict(event_prompt)
+
+        class EventLocationResult(BaseModel):
+            event: str = Field(..., description="The description of the event.")
+            location: str = Field(..., description="The location of the event.")
+            context: List[str] = Field(..., description="The context of the event.")
+        
+        event_result = self.llm.predict_structured(event_prompt, schema=EventLocationResult)
         return event_result
