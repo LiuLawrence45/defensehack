@@ -83,4 +83,13 @@
     cursor: pointer;
   }
 
+  .sidebar-container {
+    display: flex;
+    height: 100%; /* Ensures it takes full height of its parent */
+  }
+  
+  .sidebar {
+    height: 100%; /* Full height */
+  }
+  
 
