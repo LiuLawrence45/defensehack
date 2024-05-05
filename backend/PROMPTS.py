@@ -1,5 +1,7 @@
 TWITTER_PROMPT = """
-Given a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context.
+Given the a context, generate a comma separated list of one or two word keywords that would be relevant to search for for this context and are specific enough (ie, choose specific unique keywords, entities, or locations). Please make sure your queries are very targeted and will return relevant results. For example, if a location is abbreviated DPR, you should search for some sort of clarifying term (ie, Ukraine DPR) instead of just JPG because JPG is too ambigious. Or, if the example is relevant to russian, you should search ("russia" + something else) instead of just russia since russia is too broad.
+
+Use the context and the description to disambiguate locations when possible. For example, in the context of ukraine, DPR refers to Donetsk People's republic (though you may want to just query Donetsk). However, also make sure you are not too specific, for example, if referring to a specific type of hardware or device, use the general term (ie, S300 instead of S300PS).
 
 For example:
 
@@ -160,7 +162,7 @@ Generate the output:
 """
 
 EXTRACT_EVENT = """
-Given a text, extract the location of the event, and the event description, and the word-for-word exact snippets from the given context that are relevant and not redundant:
+Given a text, extract the location of the event, and the event description, and the word-for-word exact snippets from the given context that are relevant and not redundant. Return the list of strings as a properly formatted list for context.
 
 For example, given this text:
 
@@ -176,8 +178,7 @@ Return:
 
 location: Simferopol-Evpatoria highway
 event: 18-year-old Suzuki motorcycle driver dies after losing control and crashing into fence on highway near Evpatoria
-context: 
-🏍In Evpatoria, a motorcyclist flew into a road fence and died. As reported by the State Traffic Safety Inspectorate of the Ministry of Internal Affairs of the Republic of Kazakhstan, on March 27, on the Simferopol-Evpatoria highway, an 18-year-old Suzuki motorcycle driver did not choose a safe speed when rounding the road, which is why he crashed into a road fence. He died from the injuries he received at the scene of the accident.All the circumstances of what happened are now being clarified. Photo: State Traffic Safety Inspectorate of the Ministry of Internal Affairs for the Republic of Crimea 24 |@tvcrimea24
+context: ["In Evpatoria, a motorcyclist flew into a road fence and died. As reported by the State Traffic Safety Inspectorate of the Ministry of Internal Affairs of the Republic of Kazakhstan, on March 27, on the Simferopol-Evpatoria highway, an 18-year-old Suzuki motorcycle driver did not choose a safe speed when rounding the road, which is why he crashed into a road fence. He died from the injuries he received at the scene of the accident.All the circumstances of what happened are now being clarified. Photo: State Traffic Safety Inspectorate of the Ministry of Internal Affairs for the Republic of Crimea 24 |@tvcrimea24"]
 
 Given: 
 

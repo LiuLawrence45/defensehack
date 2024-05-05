@@ -1,3 +1,4 @@
 twikit
 langchain
 langchain-openai
+scikit-learn
