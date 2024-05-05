@@ -220,7 +220,7 @@ Return:
 start_date: 2023-05-04T00:00:00.000Z
 end_date: 2024-05-04T00:00:00.000Z
 location: Ukraine
-topic: sp300 missles
+topic: sp300 missiles
 
 Given this query:
 

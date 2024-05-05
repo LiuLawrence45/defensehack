@@ -3,7 +3,16 @@ from typing import List
 from pydantic import BaseModel
 from query import query
 
+from src.retrieval.client import MongoDBClient
+import motor.motor_asyncio
+import os
+import certifi
+
 app = FastAPI()
+# mongoClient = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
+# mongo = MongoDBClient(mongoClient)
+mongo = MongoDBClient()
+
 
 class SearchRequest(BaseModel):
     query: str
@@ -14,10 +23,20 @@ async def search(request: SearchRequest):
     # You would replace this with the actual search against your data
     # For example, using vector_search.search(query) if using a vector search engine
     query_to_run = query(request.query)
+    print(query_to_run)
+    # print(mongo.search_telegram(search_query = query_to_run))
 
-    
+   
 
+    # if not results:
+    #     raise HTTPException(status_code=404, detail="No results found")
+    # return results
 
-    if not results:
-        raise HTTPException(status_code=404, detail="No results found")
-    return results
+if __name__ == "__main__":
+    query_to_run = query("recent events dk300 bombing with tanks in south russia")
+    query_dict = query_to_run.__dict__
+    # print("Type of query_to_run:", type(query_to_run))
+    print("Query is: ", query_dict)
+    print(mongo.search_telegram(search_query = query_dict["topic"], start_time = query_dict["start_date"], end_time = query_dict["end_date"]))
+
+    # location = query_dict["location"]

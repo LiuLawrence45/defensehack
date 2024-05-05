@@ -6,7 +6,7 @@ from query import query
 print(query("What has happened with SP300 missles in Ukraine?"))
 
 
-# agent = Agent()
+agent = Agent()
 
 # context  = [
 #     "Event details: Destruction of Radar and S-300 Launcher near Zmiev",
@@ -28,21 +28,21 @@ print(query("What has happened with SP300 missles in Ukraine?"))
 
 # print(summary)
 
-# cluster = Cluster()
-# cluster.embed()
-# cluster.cluster()
-# clusters = cluster.get_clusters()
-# for data in clusters:
-#     event = agent.extract_event(data)
-#     context  = [
-#         f"Event details: {event.event}",
-#         f"Event description: {" ".join(event.context)}"
-#         # "Event details: An assault group of fagots was destroyed in the village of #Pervomaiskoye, through the lens of the operator of the 11th separate motorized infantry battalion “Kievan Rus”🔥💥💪🇺🇦",
-#         # # "Event description: ​🇷🇺⚡️Limansky and Seversky directions, situation at 13:00 March 31, 2024 On the Limansky direction at the turn of Terny - Yampolovka there are oncoming battles. The RF Armed Forces and the Ukrainian Armed Forces are trying to knock each other out of their positions. Units of the Russian Army have not yet managed to build on their success and enter the village of Terny."
-#     ]
-#     results = agent.run_search(context, datetime(2024, 3, 30), datetime(2024, 4, 1))
-#     relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
-#     summary = agent.summarize(context, relevant_tweets_list)
+cluster = Cluster()
+cluster.embed()
+cluster.cluster()
+clusters = cluster.get_clusters()
+for data in clusters:
+    event = agent.extract_event(data)
+    context  = [
+        f"Event details: {event.event}",
+        f"Event description: {" ".join(event.context)}"
+        # "Event details: An assault group of fagots was destroyed in the village of #Pervomaiskoye, through the lens of the operator of the 11th separate motorized infantry battalion “Kievan Rus”🔥💥💪🇺🇦",
+        # # "Event description: ​🇷🇺⚡️Limansky and Seversky directions, situation at 13:00 March 31, 2024 On the Limansky direction at the turn of Terny - Yampolovka there are oncoming battles. The RF Armed Forces and the Ukrainian Armed Forces are trying to knock each other out of their positions. Units of the Russian Army have not yet managed to build on their success and enter the village of Terny."
+    ]
+    results = agent.run_search(context, datetime(2024, 3, 30), datetime(2024, 4, 1))
+    relevant_tweets_list = [tweet for tweets in results.values() for tweet in tweets]
+    summary = agent.summarize(context, relevant_tweets_list)
     
 
 
