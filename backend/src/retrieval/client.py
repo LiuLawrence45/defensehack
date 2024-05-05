@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 import json
 from typing import List, Document
 load_dotenv()
+from collections.abc import MutableMapping
 
 class MongoDBClient:
 
@@ -26,18 +27,33 @@ class MongoDBClient:
         except Exception as e:
             print(e)
 
-    def search_telegram(self, search_field="description", search_query="", start_time=None, end_time=None) -> List(Document):
+ 
+    def search_telegram_id(self, id: str) -> List:
         collection = self.client["telegram"]["data"]
 
-        # Create index for the search field and time
-        collection.create_index([(search_field, 1), ("time", 1)])
+        try:
+            results = collection.find({"_id": id})
+            ids = [result["_id"] for result in results]  
+            print("Document IDs: ", ids)
+            return ids
+        
+        except Exception as e:
+            print("Error occurred: ", e)
+            return []
+
+
+    # Given a query, finds relevant events. These events are all Documents, that also contain a list of ids
+    def search_events(self, query: str, start_time = None, end_time = None, top_k: int = 10) -> List:
+        collection = self.client["chunked"]["data"]
+        # Create index for the time. Assuming the time is going to be held in time, and embedding in embedding.
+        collection.create_index([("embedding", 1), ("time", 1)])
 
         # Query is a dict, with the keys = to fields in each object in MongoDB
         query = {}
 
         # If a search query is provided, add as a key.
-        if search_query:
-            query[search_field] = search_query
+        if query:
+            query[search_field] = query
 
         # # If time range is not provided, default to the past two weeks
         if not start_time or not end_time:
@@ -46,21 +62,6 @@ class MongoDBClient:
 
 
         query["time"] = {"$gte": start_time, "$lte": end_time}
-
-        print("Query is: ", query)
-
-        try:
-            results = collection.find(query)
-            for result in results:
-                print(result["time"])
-            return list(results)
-        
-        except Exception as e:
-            print("Error occurred: ", e)
-
-    # Given a query, finds relevant events. These events are all Documents, that also contain a list of ids
-    def search_events(self, query: str, start_time = None, end_time = None, top_k: int = 10) -> List(Document):
-        collection = self.client["chunked"]["data"]
 
         # Create a vector search instance
         vector_search = MongoDBAtlasVectorSearch.from_connection_string(
@@ -72,11 +73,9 @@ class MongoDBClient:
 
         embeddings = OpenAIEmbeddings().embed_text(query)
         results = vector_search.similarity_search(embeddings, k=top_k)
-
         document_ids = [result['_id'] for result in results]
         documents = collection.find({'_id': {'$in': document_ids}})
         return list(documents)
-
 
 # Example usage
 if __name__ == "__main__":
